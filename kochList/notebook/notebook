@@ -1,0 +1,66 @@
+koch network diagram project. how i got from point A to B
+
+
+whiteboarding the story board.
+
+	we want to give the user the experience of exploring a universe, traversing deeper or further into the koch money network. we wanted to achieve this while staying away from a literal network graph, which we learned is simply kind of an eyesore no matter how good the design. In other words, we were dealing with a network graph that wasn't a network graph.
+
+
+inspiration board:
+	
+	This NPR project does a good job of using a list with divs nested within, to mimick the look of a table. but lists are easier to style for mobile.  http://apps.npr.org/commencement/
+
+	Other inspiration from projects letting readers explore large databases without the feeling that you are exploring a database:
+
+		http://www.texastribune.org/public-ed/explore/austin-isd/austin-high-school/
+
+		http://apps.npr.org/arrested-development/
+
+		http://projects.propublica.org/graphics/koch
+
+		http://www.playgroundsforeveryone.com/search.html#address=600+Central+Street,+Evanston,+Cook,+Illinois,+60201&latitude=42.0674615298545&longitude=-87.68193968786619&zoom=14&nearby=false
+
+
+re: mobile...
+	
+	figured out what layout we wanted on desktop, and before building started thinking about how best to approach this from mobile standpoint, which helped us narrow down if we were going to go with tables, floating or nested divs, or lists.
+
+	we're starting with a list because it's more flexible for mobile design, and it seems like there are ways to make it look like a table on desktop.
+
+
+What else we wanted:
+
+	A list populated by spreadsheet
+
+
+What we had on hand...
+	
+	A styled list hooked up to spreadsheet!
+	https://github.com/motherjones/prettylist
+
+
+Toolbox
+
+	how to make unordered list items collapse/expand with jQuery accordion widget:  http://stackoverflow.com/questions/22001711/jquery-ui-accordion-on-an-ordered-list
+
+	how jQuery accordion works:  http://jqueryui.com/accordion/#collapsible
+
+	how to make an unordered list mimick a table:	http://innovativethought.net/2007/06/11/simulating-a-table-using-an-unordered-list/
+
+	page transitions:  http://tympanus.net/Development/PageTransitions/
+
+	auto scroll:  http://balupton.github.io/jquery-scrollto/
+
+	effects while scrolling:  http://johnpolacek.github.io/scrollorama/
+
+
+need to import data from new sheet (live data) to old sheet:
+
+	=ImportRange("1C5cJlDMTkuF3kE9J8EUzWgFRmsKze-r6NGuIrCO5wes","master!A1:J97")
+
+left panel: add/remove class
+
+integrate pretty list with "detail view" panel
+
+	kind of like in syria vote tracker, how the filter works?
+
