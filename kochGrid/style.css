@@ -9,6 +9,7 @@
 #layerTop {
 	width: 100%;
 	text-align: center;
+	margin-bottom: 15px;
 }
 
 #topDetails {
@@ -61,6 +62,7 @@
 #layerEntities, #layerCategories {
 	position: relative;
 	float:left;
+	margin-bottom: 15px;
 }
 
 /* end layer container styles */
