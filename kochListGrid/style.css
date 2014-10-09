@@ -11,10 +11,11 @@
 
 #entityDetails { 
 	float:left;
-	width: 475px;
-	height: 900px;
+	width: 45%;
+/*	height: 900px;*/
 	margin-bottom: 5px;	
 	border: 1px solid #999999; 
+	padding: 10px;
 }
 
 #entityDetails p {
@@ -28,13 +29,14 @@
 
 #allEntities {
 	float:right;
+	width: 45%;
 }
 
 #allEntities ul {
 	margin:0;
 	padding:0;
 	list-style: none;
-	width: 400px;
+/*	width: 400px;*/
 }
 
 #allEntities a {
