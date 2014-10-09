@@ -2,41 +2,54 @@
 
 #layerEntities {
 	position: relative;
+	font-family: 'Oswald', sans-serif;
 }
 
 /* end layer container styles */
 
 /* start featured slide styles */
 
-#featured {
+#featuredEntity {
 	float:left;
 	width: 475px;
-	height: 1000px;
+	height: 900px;
 	background: #E4EBED;
-	margin:0;
+	margin:0;	
+}
+
+#featuredEntity p {
+	font-family: 'Open Sans', verdana, sans-serif;
+	font-size:.8em;
+	line-height: 1.7em;
+}
+
+#entityDetails { 
+	float:left;
+	width: 475px;
+	margin-bottom: 5px;	
+	border: 1px solid #999999; 
 }
 
 /* end featured slide styles */
-/* start entities nav grid styles */
+/* start allEntities nav grid styles */
 
-#entities {
+#allEntities {
 	float:right;
-	font-family: 'Oswald', sans-serif;
 }
 
-#entities ul {
+#allEntities ul {
 	margin:0;
 	padding:0;
 	list-style: none;
 	width: 400px;
 }
 
-#entities a {
+#allEntities a {
 	display: block;
 	cursor: pointer;
 }
 
-#entities li {
+#allEntities li {
 	float: right;
 	width: 23%;
 	height: 120px;
@@ -45,11 +58,11 @@
 	word-break: break-word;
 }
 
-#entities li:hover, #entities li.active {
+#allEntities li:hover, #allEntities li.active {
 	background: #a7bec4;
 }
 
-#entities p {
+#allEntities p {
 	font-size: .7em;
 	display: block;
 	vertical-align: middle;
@@ -58,13 +71,13 @@
 	color: #000000;
 }
 
-/* end entities nav grid styles */
+/* end allEntities nav grid styles */
 
 /* mobile and device styles */
 @media only screen
 (max-width: 568px) {
 	
-	#entities {
+	#allEntities {
 		font-size: 1em;
 		padding-left: 0;
 	}
