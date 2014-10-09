@@ -1,6 +1,5 @@
 next
 
-* initial slide should be category + category blurb splash
 
 * add filter classes to only show entities tied to a given category... by pulling from category column?
 
@@ -10,10 +9,12 @@ next
 
 	http://css-tricks.com/add-page-transitions-css-smoothstate-js/
 
-
+* not loving that the box height jumps around depending on the length of text.
 
 
 
 done!
 
 * merge Noah's navGrid additions for view details onclick interaction
+
+* initial slide should be category + category blurb splash
