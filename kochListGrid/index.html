@@ -30,20 +30,25 @@
       </div>
     </div>  -->
     <div id="layerEntities">
-    <section id="featuredEntity"></section>
-    <script src="featuredSlides.js"></script>  
+    <section id="entityDetails">
+      <h1>TK Category Splash Page</h1>
+      <p>TK Category-specific blurb.</p>
+      <p>Click on an entity to the right to explore the Koch's influence into this category.</p>
+    </section>
+<!--    <script src="featuredSlides.js"></script>  -->
 <!-- js for Page Transitions, disabled while looking for lighter alternative.
     <script src="pageTransitions/js/jquery.dlmenu.js"></script>
     <script src="pageTransitions/js/pagetransitions.js"></script> -->
       <section id="allEntities"></section>
       <script>
-        var listItemTemplate = '\
-          <a class="pageScroller"><li><p>{entity}</p></li></a>\
-        ';
-        var thing = viewEntities(
-          '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
-          '#allEntities',
-          listItemTemplate);
+      var divFeaturedTemplate = '<div><h1>{entity}</h1><p>{blurb}</p></div>';
+      var listItemTemplate = '<a><li><p>{entity}</p></li></a>';
+      var thing = viewEntities(
+        '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
+        '#allEntities',
+        listItemTemplate,
+        '#entityDetails',
+        divFeaturedTemplate);
       </script>
     </div>
   </body>

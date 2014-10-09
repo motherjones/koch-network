@@ -9,25 +9,18 @@
 
 /* start featured slide styles */
 
-#featuredEntity {
-	float:left;
-	width: 475px;
-	height: 900px;
-	background: #E4EBED;
-	margin:0;	
-}
-
-#featuredEntity p {
-	font-family: 'Open Sans', verdana, sans-serif;
-	font-size:.8em;
-	line-height: 1.7em;
-}
-
 #entityDetails { 
 	float:left;
 	width: 475px;
+	height: 900px;
 	margin-bottom: 5px;	
 	border: 1px solid #999999; 
+}
+
+#entityDetails p {
+	font-family: 'Open Sans', verdana, sans-serif;
+	font-size:.8em;
+	line-height: 1.7em;
 }
 
 /* end featured slide styles */

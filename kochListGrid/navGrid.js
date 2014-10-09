@@ -1,59 +1,79 @@
 var viewEntities = (function() {
-  var List = function() { return {
-    create: function() {
-      var self = this;
-      var options = {
-        key: this.spreadsheetId,
-        callback: function(data) {
-          self.data = data;
-          self.makeHTML()
-        },
-        simpleSheet: true,
+  var List = function() {
+    return {
+      create: function() {
+        var self = this;
+        var options = {
+          key: this.spreadsheetId,
+          callback: function(data) {
+            self.data = data;
+            self.makeHTML()
+          },
+          simpleSheet: true,
+        }
+        if (this.proxy) {
+          options.proxy = this.proxy;
+        }
+        Tabletop.init(options); 
+      },
+      makeHTML: function() {
+        
+        var ul = $('<ul id="navGrid"></ul>'),
+            details = this.details,
+            listTemplate = this.listTemplate,
+            detailsTemplate = this.detailsTemplate;
+
+        for (var i = 0; i < this.data.length; i++) {
+
+          var data = this.data[i];
+
+          dust.render(listTemplate, data, function(err, out) {
+
+            var $square = $(out);
+
+            dust.render(detailsTemplate, data, function(err2, out2){
+
+              $square.on("click",function(){
+                //Change this to replace the contents of some div with out2
+                details.html(out2);
+              });
+
+              ul.append($square);
+
+            });
+
+          });
+        }
+
+        this.element.append(ul);
+
       }
-      if (this.proxy) {
-        options.proxy = this.proxy;
-      }
-      Tabletop.init(options); 
-    },
-    makeHTML: function() {
-      
-      //tried to make div slides featuring each entity here...
-      //var div = $('<div id="slide pt-main" class="pt-perspective"></div>');
+    }
+  };
 
-      //for (var i = 0; i < this.data.length; i++) {
-      //  dust.render(this.template, this.data[i], function(err, out) {
-      //    div.append($(out));
-      //  });
-      //}
-
-      //this.element.append(div);
-
-      var ul = $('<ul id="navGrid"></ul>');
-
-      for (var i = 0; i < this.data.length; i++) {
-        dust.render(this.template, this.data[i], function(err, out) {
-          ul.append($(out));
-        });
-      }
-
-      this.element.append(ul);
-
-    },
-  } };
-  return function(spreadsheetId, elementSelector, template, proxy) {
-    var list = new List;
-    list.element = $(elementSelector);
-    if (!list.element) {
-      throw 'could not find your element';
-    };
-    console.log(list.element);
-
-    list.spreadsheetId = spreadsheetId;
+  var compile = function(template) {
 
     var templateName = Math.floor(Math.random() * 1000000);
     var compiledTemplate = dust.compile(template, templateName);
     dust.loadSource(compiledTemplate);
-    list.template = templateName;
+    return templateName;
+
+  }
+
+  return function(spreadsheetId, listSelector, listTemplate, detailsSelector, detailsTemplate, proxy) {
+    var list = new List;
+    list.element = $(listSelector);
+    list.details = $(detailsSelector);
+
+    if (!list.element) {
+      throw 'could not find your element';
+    };
+
+    list.spreadsheetId = spreadsheetId;
+
+    list.listTemplate = compile(listTemplate);
+
+    list.detailsTemplate = compile(detailsTemplate);
 
     if (proxy) { list.proxy = proxy; }
 
@@ -61,4 +81,5 @@ var viewEntities = (function() {
 
     return list;
   };
+
 })();
