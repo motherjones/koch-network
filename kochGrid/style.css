@@ -1,0 +1,134 @@
+/* global container styles */
+#networkContainer {
+	font-family: 'Oswald', sans-serif;
+	width: 960px;
+}
+/* end global container styles */
+
+/* start top layer styles */
+#layerTop {
+	width: 100%;
+	text-align: center;
+}
+
+#topDetails {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#allTop {
+	width:100%;
+
+}
+
+#allTop ul {	
+	margin: 0 auto;
+	padding:0;
+	list-style: none;
+	display: block;
+}
+
+#allTop a {
+	cursor: pointer;
+}
+
+#allTop li {
+	display: block;
+	float: left;
+	width: 19.5%;
+	height: 80px;
+	background: #E4EBED;
+	margin: 2px;
+	word-break: break-word;
+}
+
+#allTop li:hover, #allTop li.active {
+	background: #a7bec4;
+}
+
+#allTop p {
+	font-size: .7em;
+	display: block;
+	vertical-align: middle;
+	padding: 10px;
+	margin: 0;
+	color: #000000;
+}
+/* end top layer styles */
+
+/* start secondary layer container styles */
+#layerEntities, #layerCategories {
+	position: relative;
+	float:left;
+}
+
+/* end layer container styles */
+
+/* start featured slide styles */
+#entityDetails, #categoryDetails { 
+	float:left;
+	width: 45%;
+/*	height: 900px;*/
+	margin-bottom: 5px;	
+	border: 1px solid #999999; 
+	padding: 10px;
+}
+
+#entityDetails p, #categoryDetails p {
+	font-family: 'Open Sans', verdana, sans-serif;
+	font-size:.8em;
+	line-height: 1.7em;
+}
+/* end featured slide styles */
+
+/* start nav grid styles */
+#allEntities, #allCategories {
+	float:right;
+	width: 45%;
+}
+
+#allEntities ul, #allCategories ul {
+	margin:0;
+	padding:0;
+	list-style: none;
+	display: block;
+}
+
+#allEntities a, #allCategories a {
+	cursor: pointer;
+}
+
+#allEntities li, #allCategories li {
+	float: left;
+	width: 23%;
+	height: 120px;
+	background: #E4EBED;
+	margin: 2px;
+	word-break: break-word;
+}
+
+#allEntities li:hover, #allEntities li.active,
+#allCategories li:hover, #allCategories li.active {
+	background: #a7bec4;
+}
+
+#allEntities p, #allCategories p {
+	font-size: .7em;
+	display: block;
+	vertical-align: middle;
+	padding: 10px;
+	margin: 0;
+	color: #000000;
+}
+/* end nav grid styles */
+
+/* mobile and device styles */
+@media only screen
+(max-width: 568px) {
+	
+	#allEntities, #allCategories {
+		font-size: 1em;
+		padding-left: 0;
+	}
+}

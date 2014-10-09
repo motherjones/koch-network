@@ -18,7 +18,7 @@ var viewEntities = (function() {
       },
       makeHTML: function() {
         
-        var ul = $('<ul id="navGrid"></ul>'),
+        var ul = $('<ul></ul>'),
             details = this.details,
             listTemplate = this.listTemplate,
             detailsTemplate = this.detailsTemplate;
