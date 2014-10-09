@@ -1,9 +1,10 @@
 next
 
-* new data column for "top featured" categories, orgs, and people
+* new data column for "top view" categories, orgs, and people
 
-* make category show up only if it's a new instance. disregard repeat instances, disregard NULLs
+* make category show up in the <ul> only if it's a new instance. disregard repeat instances, disregard NULLs
 
+* add auto scroll transition between all layers?
 
 * add filter classes to only show entities tied to a given category... by pulling from category column?
 
@@ -13,7 +14,7 @@ next
 
 	http://css-tricks.com/add-page-transitions-css-smoothstate-js/
 
-* not loving that the box height jumps around depending on the length of text.
+* not loving that the detail box height jumps around depending on the length of text.
 
 
 
