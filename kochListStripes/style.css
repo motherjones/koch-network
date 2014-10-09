@@ -1,0 +1,57 @@
+/* start featured slide styles */
+
+#featured {
+	float: left;
+	width: 560px;
+}
+
+/* end featured slide styles */
+/* start entities nav grid styles */
+
+#entities {
+	font-family: 'Oswald', sans-serif;
+}
+
+#entities ul {
+	list-style: none;
+	width: 400px;
+}
+
+#entities a {
+	display: block;
+	cursor: pointer;
+}
+
+#entities li {
+	float: right;
+	width: 100%;
+	height: 40px;
+	background: #E4EBED;
+	margin: 2px;
+	word-break: break-word;
+	vertical-align: middle;
+}
+
+#entities li:hover, #entities li.active {
+	background: #a7bec4;
+}
+
+#entities p {
+	font-size: .7em;
+	display: block;
+	padding: 10px;
+	margin: 0;
+	color: #000000;
+}
+
+/* end entities nav grid styles */
+
+/* mobile and device styles */
+@media only screen
+(max-width: 568px) {
+	
+	#entities {
+		font-size: 1em;
+		padding-left: 0;
+	}
+}

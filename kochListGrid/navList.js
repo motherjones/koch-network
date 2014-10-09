@@ -17,14 +17,14 @@ var viewEntities = (function() {
     },
     makeHTML: function() {
       
-      var div = $('<div id="featured pt-main" class="pt-perspective"></div>');
+      //var div = $('<div id="featured pt-main" class="pt-perspective"></div>');
       var ul = $('<ul id="navGrid"></ul>');
 
-      for (var i = 0; i < this.data.length; i++) {
-        dust.render(this.template, this.data[i], function(err, out) {
-          div.append($(out));
-        });
-      }
+      //for (var i = 0; i < this.data.length; i++) {
+      //  dust.render(this.template, this.data[i], function(err, out) {
+      //    div.append($(out));
+      //  });
+      //}
 
       for (var i = 0; i < this.data.length; i++) {
         dust.render(this.template, this.data[i], function(err, out) {
@@ -32,7 +32,7 @@ var viewEntities = (function() {
         });
       }
 
-      this.element.apped(div);
+      //this.element.apped(div);
       this.element.append(ul);
 
     },
