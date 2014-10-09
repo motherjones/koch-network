@@ -3,22 +3,19 @@
     <script src="dust-full-1.2.3.min.js"></script>
     <script src="jquery.min.js"></script>
     <script src="tabletop.js"></script>
-    <script src="prettylist.js"></script>
+    <script src="navList.js"></script>
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="">
-    <div id="prettylist">
+    <div id="entities">
     </div>
     <script>
       var listItemTemplate = '\
-        <h1><a href="{url}">{entity}</a></h1>\
-        <p>{category}</p>\
-        <p>{blurb}</p>\
+        <a class="pageScroller"><li><p>{entity}</p></li></a>\
       ';
-      var thing = PrettyList(
+      var thing = viewEntities(
         '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
-        '#prettylist',
+        '#entities',
         listItemTemplate);
     </script>
   </body>

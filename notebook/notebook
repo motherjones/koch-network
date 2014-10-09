@@ -10,6 +10,8 @@ inspiration board:
 	
 	This NPR project does a good job of using a list with divs nested within, to mimick the look of a table. but lists are easier to style for mobile.  http://apps.npr.org/commencement/
 
+	this nav does a lot of what we want for second and third layer:  http://grainandmortar.com/services/
+
 	Other inspiration from projects letting readers explore large databases without the feeling that you are exploring a database:
 
 		http://www.texastribune.org/public-ed/explore/austin-isd/austin-high-school/
@@ -63,4 +65,6 @@ left panel: add/remove class
 integrate pretty list with "detail view" panel
 
 	kind of like in syria vote tracker, how the filter works?
+
+vertical align text multiple lines in <li>:  http://www.ampsoft.net/webdesign-l/vertical-aligned-nav-list.html
 

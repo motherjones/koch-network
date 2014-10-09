@@ -1,4 +1,4 @@
-var PrettyList = (function() {
+var viewEntities = (function() {
   var List = function() { return {
     create: function() {
       var self = this;
@@ -16,13 +16,25 @@ var PrettyList = (function() {
       Tabletop.init(options); 
     },
     makeHTML: function() {
-      var ul = $('<ul class="pretty_list"></ul>');
+      
+      var div = $('<div id="featured pt-main" class="pt-perspective"></div>');
+      var ul = $('<ul id="navGrid"></ul>');
+
+      for (var i = 0; i < this.data.length; i++) {
+        dust.render(this.template, this.data[i], function(err, out) {
+          div.append($(out));
+        });
+      }
+
       for (var i = 0; i < this.data.length; i++) {
         dust.render(this.template, this.data[i], function(err, out) {
           ul.append($(out));
         });
       }
+
+      this.element.apped(div);
       this.element.append(ul);
+
     },
   } };
   return function(spreadsheetId, elementSelector, template, proxy) {
