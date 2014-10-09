@@ -1,18 +1,32 @@
+/* start layer container styles */
+
+#layerEntities {
+	position: relative;
+}
+
+/* end layer container styles */
+
 /* start featured slide styles */
 
 #featured {
-	float: left;
-	width: 560px;
+	float:left;
+	width: 475px;
+	height: 1000px;
+	background: #E4EBED;
+	margin:0;
 }
 
 /* end featured slide styles */
 /* start entities nav grid styles */
 
 #entities {
+	float:right;
 	font-family: 'Oswald', sans-serif;
 }
 
 #entities ul {
+	margin:0;
+	padding:0;
 	list-style: none;
 	width: 400px;
 }

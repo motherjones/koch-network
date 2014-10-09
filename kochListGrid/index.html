@@ -4,24 +4,23 @@
     <script src="jquery.min.js"></script>
     <script src="tabletop.js"></script>
     <script src="navList.js"></script>
-    <script src="kochSlides.js"></script>
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-
-    <section id="featured"></section>
-    
-    <section id="entities"></section>
-    <script>
-      var listItemTemplate = '\
-        <a class="pageScroller"><li><p>{entity}</p></li></a>\
-      ';
-      var thing = viewEntities(
-        '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
-        '#entities',
-        listItemTemplate);
-    </script>
-
+    <div id="layerEntities">
+      <section id="featured"></section>
+      <script src="kochSlides.js"></script>   
+      <section id="entities"></section>
+      <script>
+        var listItemTemplate = '\
+          <a class="pageScroller"><li><p>{entity}</p></li></a>\
+        ';
+        var thing = viewEntities(
+          '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
+          '#entities',
+          listItemTemplate);
+      </script>
+    </div>
   </body>
 </html>
 

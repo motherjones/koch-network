@@ -4,12 +4,12 @@ var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0AiK02
 var makeSlide = function(data) {
 
 //write a Dust.js template for data table
-    var featuredSlide = '<div>\
-                        {#allEntities}\
+    var featuredSlide = '{#allEntities}\
+                        <div>\
                         <h1>{entity}</h1>\
                         <p>{blurb}<p>\
-                        {/allEntities}\
                         </div>\
+                        {/allEntities}\
                         ';
 
     //compile above Dust template
