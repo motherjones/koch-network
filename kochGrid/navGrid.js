@@ -19,44 +19,43 @@ var viewEntities = (function() {
 
       makeHTML: function() {
 
-        var categories = Object.keys(unique_categories);
         var unique_categories = {};
 
-        for (var i = 0; i < this.data.length; i++) {
+        for (var i = 0; i < data.length; i++) {
           unique_categories[data[i].category] = true;
         }
         
+        var categories = Object.keys(unique_categories);
+
         for (var i = 0; i < categories.length; i++) {
+           
            for (var j=0; j < data.length; j++) {
-             if (data[i][j]) {
+             
+             if (data[j][i]) {
                
-               var ul = $('<ul></ul>'),
+              var ul = $('<ul></ul>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;
-
-                for (var i = 0; i < data.length; i++) {
-
-                  var data = this.data[i];
                   
-                  if (data.category) {
+              if (data.category) {
+                
+                var data = data[j];
+                dust.render(listTemplate, data, function(err, out) {
 
-                    dust.render(listTemplate, data, function(err, out) {
+                  var $square = $(out);
 
-                      var $square = $(out);
+                  dust.render(detailsTemplate, data, function(err2, out2){
 
-                      dust.render(detailsTemplate, data, function(err2, out2){
-
-                        $square.on("click",function(){
-                          //Change this to replace the contents of some div with out2
-                          details.html(out2);
-                        });
-
-                        ul.append($square);
-                      });
+                    $square.on("click",function(){
+                      //Change this to replace the contents of some div with out2
+                      details.html(out2);
                     });
-                  }
-                }
+
+                    ul.append($square);
+                  });
+                });
+              }
              }
            }
         }
