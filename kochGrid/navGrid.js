@@ -22,7 +22,10 @@ var viewEntities = (function() {
         var unique_categories = {};
 
         for (var i = 0; i < this.data.length; i++) {
-          unique_categories[this.data[i].category] = true;
+
+           if (this.data[i].category) {
+              unique_categories[this.data[i].category] = true;
+           }
         }
         
         var categories = Object.keys(unique_categories);
