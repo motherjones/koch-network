@@ -28,41 +28,38 @@ var viewEntities = (function() {
         var categories = Object.keys(unique_categories);
 
         for (var i = 0; i < categories.length; i++) {
-           
-           for (var j=0; j < data.length; j++) {
-             
-             if (data[j][i]) {
-               
-              var ul = $('<ul></ul>'),
+
+          var ul = $('<ul></ul>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
-                detailsTemplate = this.detailsTemplate;
-                  
-              if (data.category) {
-                
-                var data = data[j];
-                dust.render(listTemplate, data, function(err, out) {
+                detailsTemplate = this.detailsTemplate;   
+           
+          for (var j=0; j < data.length; j++) {
+             
+            if (data[j].category === categories[j]) {               
+              var data = data[j];
+              
+              dust.render(listTemplate, data, function(err, out) {
+                var $square = $(out);
 
-                  var $square = $(out);
+                dust.render(detailsTemplate, data, function(err2, out2){
 
-                  dust.render(detailsTemplate, data, function(err2, out2){
-
-                    $square.on("click",function(){
-                      //Change this to replace the contents of some div with out2
-                      details.html(out2);
-                    });
-
-                    ul.append($square);
+                  $square.on("click",function(){
+                    //Change this to replace the contents of some div with out2
+                    details.html(out2);
                   });
+
+                  ul.append($square);
                 });
-              }
-             }
-           }
+
+              });
+            }
+          }
+
+          this.element.append(ul);
         }
-
-        this.element.append(ul);
-
       }
+
     }
   };
 
