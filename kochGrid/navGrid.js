@@ -21,8 +21,8 @@ var viewEntities = (function() {
 
         var unique_categories = {};
 
-        for (var i = 0; i < data.length; i++) {
-          unique_categories[data[i].category] = true;
+        for (var i = 0; i < this.data.length; i++) {
+          unique_categories[this.data[i].category] = true;
         }
         
         var categories = Object.keys(unique_categories);
@@ -34,10 +34,10 @@ var viewEntities = (function() {
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;   
            
-          for (var j=0; j < data.length; j++) {
+          for (var j=0; j < this.data.length; j++) {
              
-            if (data[j].category === categories[j]) {               
-              var data = data[j];
+            if (this.data[j].category === categories[j]) {               
+              var data = this.data[j];
               
               dust.render(listTemplate, data, function(err, out) {
                 var $square = $(out);
