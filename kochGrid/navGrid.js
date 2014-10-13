@@ -16,33 +16,49 @@ var viewEntities = (function() {
         }
         Tabletop.init(options); 
       },
+
       makeHTML: function() {
-        
-        var ul = $('<ul></ul>'),
-            details = this.details,
-            listTemplate = this.listTemplate,
-            detailsTemplate = this.detailsTemplate;
+
+        var categories = Object.keys(unique_categories);
+        var unique_categories = {};
 
         for (var i = 0; i < this.data.length; i++) {
+          unique_categories[data[i].category] = true;
+        }
+        
+        for (var i = 0; i < categories.length; i++) {
+           for (var j=0; j < data.length; j++) {
+             if (data[i][j]) {
+               
+               var ul = $('<ul></ul>'),
+                details = this.details,
+                listTemplate = this.listTemplate,
+                detailsTemplate = this.detailsTemplate;
 
-          var data = this.data[i];
+                for (var i = 0; i < data.length; i++) {
 
-          dust.render(listTemplate, data, function(err, out) {
+                  var data = this.data[i];
+                  
+                  if (data.category) {
 
-            var $square = $(out);
+                    dust.render(listTemplate, data, function(err, out) {
 
-            dust.render(detailsTemplate, data, function(err2, out2){
+                      var $square = $(out);
 
-              $square.on("click",function(){
-                //Change this to replace the contents of some div with out2
-                details.html(out2);
-              });
+                      dust.render(detailsTemplate, data, function(err2, out2){
 
-              ul.append($square);
+                        $square.on("click",function(){
+                          //Change this to replace the contents of some div with out2
+                          details.html(out2);
+                        });
 
-            });
-
-          });
+                        ul.append($square);
+                      });
+                    });
+                  }
+                }
+             }
+           }
         }
 
         this.element.append(ul);
