@@ -2,10 +2,29 @@
   <head>
     <title>The Koch Network</title>
     <script src="dust-full-1.2.3.min.js"></script>
-    <script src="jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="tabletop.js"></script>
     <script src="navGrid.js"></script>
+    <script>
+      $(function() {
+          $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html,body').animate({
+                  scrollTop: target.offset().top
+                }, 1000);
+                return false;
+              }
+            }
+          });
+        });      
+    </script>
+
     <link href="style.css" rel="stylesheet" />
+
   </head>
 
   <body>
@@ -15,7 +34,7 @@
     <section id="intro">
       <h1>The Koch Network</h1>
       <p>Explore the vast and far-reaching influence of Charles and David Koch.</p>
-      <div id="catNav"></div>
+      <div id="catNav" class="gm_stickyNavWrapper"></div>
     </section>
 
     <section id="categorySections">
@@ -23,7 +42,7 @@
     </section>
       <script>
         var divFeaturedTemplate = '<h1>{entity}</h1><p>{blurb}</p>'; //make div with details about each entity
-        var categoryItemTemplate = '<a><li><p>{category}</p></li></a>'; //make category nav
+        var categoryItemTemplate = '<a href="#{category}"><li class="scrollElement"><img height="40px" src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" /><p>{category}</p></li></a>'; //make category nav
         var listItemTemplate = '<a><li><p>{entity}</p></li></a>'; //make entity grid
         var thing = viewEntities(
           '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',

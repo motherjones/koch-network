@@ -1,3 +1,4 @@
+//makes nav menu, category slides, entity details and populate with Google Spreadsheet
 var viewEntities = (function() {
   var List = function() {
     return {
@@ -35,7 +36,7 @@ var viewEntities = (function() {
         for (var i = 0; i < categories.length; i++) {
 
           var ul = $('<ul class="entitiesMenu"></ul>'),
-                div = $('<div id="' + categories[i] + '" class="anchorSection"><div id="' + categories[i] + 'Featured" class="featuredDetails"></div></div>'),
+                div = $('<div id="' + categories[i] + '" class="sectionAnchor"><div id="' + categories[i] + 'Featured" class="featuredDetails"></div></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;

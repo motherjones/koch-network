@@ -196,7 +196,7 @@ jQuery(document).ready(function($) {
 		} );
 	} );
 
-	var disableChange = false;
+	
 	
 	$(document).ready( function() {
 
