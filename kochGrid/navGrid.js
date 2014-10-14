@@ -30,12 +30,12 @@ var viewEntities = (function() {
         
         var categories = Object.keys(unique_categories);
         var top_ul = $('<ul></ul>');
-        $('#allTop').append(top_ul);
+        $('#catNav').append(top_ul);
 
         for (var i = 0; i < categories.length; i++) {
 
           var ul = $('<ul></ul>'),
-                div = $('<div id="' + categories[i] + '"></div>'),
+                div = $('<div id="' + categories[i] + '" class="anchorSection"></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;

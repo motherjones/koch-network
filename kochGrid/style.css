@@ -6,49 +6,42 @@
 /* end global container styles */
 
 /* start top layer styles */
-#layerTop {
+#intro {
 	width: 100%;
 	text-align: center;
 	margin-bottom: 15px;
 }
 
-#topDetails {
-	width: 80%;
-	margin: 0 auto;
-	padding: 0;
-}
-
-#allTop {
+#catNav {
 	width:100%;
-
 }
 
-#allTop ul {	
+#catNav ul {	
+	display: block;
 	margin: 0 auto;
 	padding:0;
 	list-style: none;
-	display: block;
 }
 
-#allTop a {
+#catNav a {
 	cursor: pointer;
 }
 
-#allTop li {
+#catNav li {
 	display: block;
 	float: left;
-	width: 19.5%;
+	width: 9.5%;
 	height: 80px;
 	background: #E4EBED;
 	margin: 2px;
 	word-break: break-word;
 }
 
-#allTop li:hover, #allTop li.active {
+#catNav li:hover, #catNav li.active {
 	background: #a7bec4;
 }
 
-#allTop p {
+#catNav p {
 	font-size: .7em;
 	display: block;
 	vertical-align: middle;
@@ -59,7 +52,7 @@
 /* end top layer styles */
 
 /* start secondary layer container styles */
-.categorySection {
+.anchorSection {
 	position: relative;
 	float:left;
 	margin-bottom: 15px;
@@ -71,7 +64,6 @@
 .featuredDetails { 
 	float:left;
 	width: 45%;
-/*	height: 900px;*/
 	margin-bottom: 5px;	
 	border: 1px solid #999999; 
 	padding: 10px;

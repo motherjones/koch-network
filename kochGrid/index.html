@@ -16,25 +16,14 @@
   <body>
 
   <div id="networkContainer">
-    <div id="layerTop">
-      <section id="intro">
-        <h1>The Koch Network</h1>
-        <p>Explore the vast and far-reaching influence of Charles and David Koch.</p>
-      </section>
+    
+    <section id="intro">
+      <h1>The Koch Network</h1>
+      <p>Explore the vast and far-reaching influence of Charles and David Koch.</p>
+      <div id="catNav"></div>
+    </section>
 
-      <section id="topDetails">
-        <h4>(optional teaser for each top view category/org/person)</h4>
-      </section>
-      <section id="allTop"></section>
-    </div>
-
-    <div id="category1" class="categorySection">
-      <section id="category1Details" class="featuredDetails">
-        <h1>Schools</h1>
-        <p>The Koch brother network extends far beyond political action committees and lobbying groups. At least TK organizations and individuals are tied to the Koch cash network, from universities to media companies, think tanks, student groups. Click on a category to the right to explore the Koch's influence.</p>
-      </section>
-
-      <section id="allCategory1" class="entitiesMenu"></section>
+    <section id="categorySections"></section>
       <script>
         var divFeaturedTemplate = '<div><h1>{entity}</h1><p>{blurb}</p></div>';
         var categoryItemTemplate = '<a><li><p>{category}</p></li></a>';
