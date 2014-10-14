@@ -80,9 +80,6 @@
 .entitiesMenu {
 	float:right;
 	width: 45%;
-}
-
-.entitiesMenu ul {
 	margin:0;
 	padding:0;
 	list-style: none;

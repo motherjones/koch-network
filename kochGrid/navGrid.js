@@ -34,7 +34,7 @@ var viewEntities = (function() {
 
         for (var i = 0; i < categories.length; i++) {
 
-          var ul = $('<ul></ul>'),
+          var ul = $('<ul class="entitiesMenu"></ul>'),
                 div = $('<div id="' + categories[i] + '" class="anchorSection"></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
