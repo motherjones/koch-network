@@ -44,8 +44,14 @@ var viewEntities = (function() {
           dust.render(this.categoryTemplate, {category: categories[i]}, function(err, out) {
             var $catSquare = $(out);
             $catSquare.click(function() {
-              //FIXME DO WHATEVER WE DO WHEN YOU CLICK ON A CATEGORY BUTTON
-            });
+              var target = $(this.hash);
+                           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                           if (target.length) {
+                             $('html,body').animate({
+                               scrollTop: target.offset().top
+                             }, 1000);
+                             return false;
+                           }            });
             top_ul.append($catSquare);
           });
            
@@ -54,19 +60,21 @@ var viewEntities = (function() {
             if (this.data[j].category === categories[i]) {               
               var data = this.data[j];
               
-              dust.render(listTemplate, data, function(err, out) {
-                var $square = $(out);
+              (function(category) {
+                dust.render(listTemplate, data, function(err, out) {
+                  var $square = $(out);
 
-                dust.render(detailsTemplate, data, function(err2, out2){
+                  dust.render(detailsTemplate, data, function(err2, out2){
 
-                  $square.on("click",function(){
-                    //Change this to replace the contents of some div with out2
-                    details.html(out2);
+                    $square.on("click",function(){
+                      //Change this to replace the contents of some div with out2
+                      $('#' + category + 'Featured').html(out2);
+                    });
+
+                    ul.append($square);
                   });
-
-                  ul.append($square);
                 });
-              });
+              })(categories[i]);
             }
           }
           
