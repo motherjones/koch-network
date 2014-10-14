@@ -26,16 +26,6 @@
         <h4>(optional teaser for each top view category/org/person)</h4>
       </section>
       <section id="allTop"></section>
-      <script>
-        var divFeaturedTemplate = '<h4>(another teaser for each top view category/org/person)</h4>';
-        var listItemTemplate = '<a><li><p>{category}</p></li></a>';
-        var thing = viewEntities(
-          '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
-          '#allTop',
-          listItemTemplate, 
-          '#topDetails',
-          divFeaturedTemplate);
-      </script>
     </div>
 
     <div id="category1" class="categorySection">
@@ -47,6 +37,7 @@
       <section id="allCategory1" class="entitiesMenu"></section>
       <script>
         var divFeaturedTemplate = '<div><h1>{entity}</h1><p>{blurb}</p></div>';
+        var categoryItemTemplate = '<a><li><p>{category}</p></li></a>';
         var listItemTemplate = '<a><li><p>{entity}</p></li></a>';
         var thing = viewEntities(
           '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',

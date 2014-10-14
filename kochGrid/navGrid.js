@@ -29,13 +29,24 @@ var viewEntities = (function() {
         }
         
         var categories = Object.keys(unique_categories);
+        var top_ul = $('<ul></ul>');
+        $('#allTop').append(top_ul);
 
         for (var i = 0; i < categories.length; i++) {
 
           var ul = $('<ul></ul>'),
+                div = $('<div id="' + categories[i] + '"></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
-                detailsTemplate = this.detailsTemplate;   
+                detailsTemplate = this.detailsTemplate;
+
+          dust.render(this.categoryTemplate, {category: categories[i]}, function(err, out) {
+            var $catSquare = $(out);
+            $catSquare.click(function() {
+              //FIXME DO WHATEVER WE DO WHEN YOU CLICK ON A CATEGORY BUTTON
+            });
+            top_ul.append($catSquare);
+          });
            
           for (var j=0; j < this.data.length; j++) {
              
@@ -58,7 +69,8 @@ var viewEntities = (function() {
             }
           }
           
-          this.element.append(ul);
+          div.append(ul);
+          this.element.append(div);
         }
       }
     }
@@ -85,6 +97,8 @@ var viewEntities = (function() {
     list.spreadsheetId = spreadsheetId;
 
     list.listTemplate = compile(listTemplate);
+
+    list.categoryTemplate = compile(categoryItemTemplate);
 
     list.detailsTemplate = compile(detailsTemplate);
 
