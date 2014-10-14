@@ -20,20 +20,18 @@
       <div id="catNav" class="gm_stickyNavWrapper"></div>
     </section>
 
-    <section id="categorySections">
-<!--    <div id="featuredDetails"></div> need to rewrite this so that each category panel has its own featured details view -->
-    </section>
-      <script>
-        var divFeaturedTemplate = '<h1>{entity}</h1><p>{blurb}</p>'; //make div with details about each entity
-        var categoryItemTemplate = '<a href="#{category}"><li class="scrollElement"><img height="40px" src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" /><p>{category}</p></li></a>'; //make category nav
-        var listItemTemplate = '<a><li><p>{entity}</p></li></a>'; //make entity grid
-        var thing = viewEntities(
-          '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
-          '#categorySections',
-          listItemTemplate,
-          '#featuredDetails', 
-          divFeaturedTemplate); // need to rewrite this so that each category panel has its own featured details view
-      </script>
+    <section id="categorySections"></section>
+    <script>
+      var divFeaturedTemplate = '<h1>{entity}</h1><p>{blurb}</p>'; //make div with details about each entity
+      var categoryItemTemplate = '<a href="#{category}"><li class="scrollElement"><img height="40px" src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" /><p>{category}</p></li></a>'; //make category nav
+      var listItemTemplate = '<a><li><p>{entity}</p></li></a>'; //make entity grid
+      var thing = viewEntities(
+        '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
+        '#categorySections',
+        listItemTemplate,
+        '#featuredDetails', 
+        divFeaturedTemplate); // need to rewrite this so that each category panel has its own featured details view
+    </script>
   </div>
   </body>
 </html>
