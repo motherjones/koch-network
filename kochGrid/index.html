@@ -6,13 +6,8 @@
     <script src="tabletop.js"></script>
     <script src="navGrid.js"></script>
     <link href="style.css" rel="stylesheet" />
-<!-- disable Page Transitions for now     
-    <link rel="stylesheet" type="text/css" href="pageTransitions/css/default.css" />
-    <link rel="stylesheet" type="text/css" href="pageTransitions/css/multilevelmenu.css" />
-    <link rel="stylesheet" type="text/css" href="pageTransitions/css/component.css" />
-    <link rel="stylesheet" type="text/css" href="pageTransitions/css/animations.css" />
-    <script src="pageTransitions/js/modernizr.custom.js"></script> -->
   </head>
+
   <body>
 
   <div id="networkContainer">
@@ -23,17 +18,19 @@
       <div id="catNav"></div>
     </section>
 
-    <section id="categorySections"></section>
+    <section id="categorySections">
+    <div id="featuredDetails"></div> <!-- need to rewrite this so that each category panel has its own featured details view -->
+    </section>
       <script>
-        var divFeaturedTemplate = '<div><h1>{entity}</h1><p>{blurb}</p></div>';
-        var categoryItemTemplate = '<a><li><p>{category}</p></li></a>';
-        var listItemTemplate = '<a><li><p>{entity}</p></li></a>';
+        var divFeaturedTemplate = '<h1>{entity}</h1><p>{blurb}</p>'; //make div with details about each entity
+        var categoryItemTemplate = '<a><li><p>{category}</p></li></a>'; //make category nav
+        var listItemTemplate = '<a><li><p>{entity}</p></li></a>'; //make entity grid
         var thing = viewEntities(
           '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
           '#categorySections',
           listItemTemplate,
-          '#featuredDetails',
-          divFeaturedTemplate);
+          '#featuredDetails', 
+          divFeaturedTemplate); // need to rewrite this so that each category panel has its own featured details view
       </script>
   </div>
   </body>
