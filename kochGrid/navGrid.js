@@ -30,7 +30,7 @@ var viewEntities = (function() {
 
           var categoryBlurb = {};
           if (this.data[i].category) {
-            unique_categories[this.data[i].category] = this.data[i].categoryBlurb;
+            unique_categories[this.data[i].category] = this.data[i].categoryblurb;
           }
         }
         
