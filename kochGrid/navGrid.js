@@ -56,9 +56,10 @@ var viewEntities = (function() {
                 });
               });
             }
-
+          }
+          
           this.element.append(ul);
-//        }
+        }
       }
     }
   };
