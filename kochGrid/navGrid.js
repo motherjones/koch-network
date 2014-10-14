@@ -39,7 +39,7 @@ var viewEntities = (function() {
            
           for (var j=0; j < this.data.length; j++) {
              
-            if (this.data[j].category === categories[j]) {               
+            if (this.data[j].category === categories[i]) {               
               var data = this.data[j];
               
               dust.render(listTemplate, data, function(err, out) {
