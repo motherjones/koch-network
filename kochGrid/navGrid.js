@@ -19,25 +19,28 @@ var viewEntities = (function() {
 
       makeHTML: function() {
 
-//        var unique_categories = {};
-//        for (var i = 0; i < this.data.length; i++) {
-//           if (this.data[i].category) {
-//              unique_categories[this.data[i].category] = true;
-//           }
-//        }
-//        var categories = ['lobbying group', 'christian lobbying group', 'grassroots lobbying group'];
-//        for (var i = 0; i < categories.length; i++) {
+        var unique_categories = {};
+
+        for (var i = 0; i < this.data.length; i++) {
+
+           if (this.data[i].category) {
+              unique_categories[this.data[i].category] = true;
+           }
+        }
+        
+        var categories = Object.keys(unique_categories);
+
+        for (var i = 0; i < categories.length; i++) {
 
           var ul = $('<ul></ul>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;   
-          
-          for (var i = 0; i < this.data.length; i++) {
+           
+          for (var j=0; j < this.data.length; j++) {
              
-//            if (this.data[j].category === categories[j]) { 
-
-              var data = this.data[i];
+            if (this.data[j].category === categories[j]) {               
+              var data = this.data[j];
               
               dust.render(listTemplate, data, function(err, out) {
                 var $square = $(out);

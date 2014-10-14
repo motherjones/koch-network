@@ -6,22 +6,46 @@
     <script src="tabletop.js"></script>
     <script src="navGrid.js"></script>
     <link href="style.css" rel="stylesheet" />
+<!-- disable Page Transitions for now     
+    <link rel="stylesheet" type="text/css" href="pageTransitions/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="pageTransitions/css/multilevelmenu.css" />
+    <link rel="stylesheet" type="text/css" href="pageTransitions/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="pageTransitions/css/animations.css" />
+    <script src="pageTransitions/js/modernizr.custom.js"></script> -->
   </head>
   <body>
+<!-- menu for testing transitions, disabled unless we get Page Transitions to work.
+    <div class="pt-triggers">
+      <div id="dl-menu" class="dl-menuwrapper">
+        <button class="dl-trigger">Choose a transition</button>
+        <ul class="dl-menu">
+          <li>
+            <a href="#">Move</a>
+            <ul class="dl-submenu">
+              <li data-animation="1"><a href="#">Move to left/ from right</a></li>
+              <li data-animation="2"><a href="#">Move to right/ from left</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>  -->
   <div id="networkContainer">
     <div id="layerTop">
       <section id="intro">
         <h1>The Koch Network</h1>
         <p>Explore the vast and far-reaching influence of Charles and David Koch.</p>
       </section>
- 
+  <!--    <script src="featuredSlides.js"></script>  -->
+  <!-- js for Page Transitions, disabled while looking for lighter alternative.
+      <script src="pageTransitions/js/jquery.dlmenu.js"></script>
+      <script src="pageTransitions/js/pagetransitions.js"></script> -->
       <section id="topDetails">
-        <h4></h4>
+        <h4>(optional teaser for each top view category/org/person)</h4>
       </section>
       <section id="allTop"></section>
       <script>
-        var divFeaturedTemplate = '<h4></h4>';
-        var listItemTemplate = '<a><li><p>{category}</p></li></a>';
+        var divFeaturedTemplate = '<h4>(another teaser for each top view category/org/person)</h4>';
+        var listItemTemplate = '<a><li><p>{topview}</p></li></a>';
         var thing = viewEntities(
           '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
           '#allTop',
