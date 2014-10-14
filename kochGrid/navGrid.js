@@ -24,19 +24,25 @@ var viewEntities = (function() {
 
         for (var i = 0; i < this.data.length; i++) {
 
-           if (this.data[i].category) {
-              unique_categories[this.data[i].category] = true;
-           }
+          if (this.data[i].category) {
+            unique_categories[this.data[i].category] = true;
+          }
+
+          var categoryBlurb = {};
+          if (this.data[i].category) {
+            unique_categories[this.data[i].category] = this.data[i].categoryBlurb;
+          }
         }
         
         var categories = Object.keys(unique_categories);
+        var allCategoryBlurbs = Object.keys(categoryBlurb);
         var top_ul = $('<ul></ul>');
         $('#catNav').append(top_ul);
 
         for (var i = 0; i < categories.length; i++) {
 
           var ul = $('<ul class="entitiesMenu"></ul>'),
-                div = $('<div id="' + categories[i] + '" class="sectionAnchor"><div id="' + categories[i] + 'Featured" class="featuredDetails"></div></div>'),
+                div = $('<div id="' + categories[i] + '" class="sectionAnchor"><div id="' + categories[i] + 'Featured" class="featuredDetails"><h1>' + categories[i] + '</h1><p>' + allCategoryBlurbs[i] + '</p></div></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;
