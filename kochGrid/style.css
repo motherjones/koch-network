@@ -37,7 +37,7 @@
 #allTop li {
 	display: block;
 	float: left;
-	width: 19.5%;
+	width: 8.5%;
 	height: 80px;
 	background: #E4EBED;
 	margin: 2px;
@@ -59,7 +59,7 @@
 /* end top layer styles */
 
 /* start secondary layer container styles */
-#layerEntities, #layerCategories {
+.categorySection {
 	position: relative;
 	float:left;
 	margin-bottom: 15px;
@@ -68,7 +68,7 @@
 /* end layer container styles */
 
 /* start featured slide styles */
-#entityDetails, #categoryDetails { 
+.featuredDetails { 
 	float:left;
 	width: 45%;
 /*	height: 900px;*/
@@ -77,7 +77,7 @@
 	padding: 10px;
 }
 
-#entityDetails p, #categoryDetails p {
+.featuredDetails p {
 	font-family: 'Open Sans', verdana, sans-serif;
 	font-size:.8em;
 	line-height: 1.7em;
@@ -85,23 +85,23 @@
 /* end featured slide styles */
 
 /* start nav grid styles */
-#allEntities, #allCategories {
+.entitiesMenu {
 	float:right;
 	width: 45%;
 }
 
-#allEntities ul, #allCategories ul {
+.entitiesMenu ul {
 	margin:0;
 	padding:0;
 	list-style: none;
 	display: block;
 }
 
-#allEntities a, #allCategories a {
+.entitiesMenu a {
 	cursor: pointer;
 }
 
-#allEntities li, #allCategories li {
+.entitiesMenu li {
 	float: left;
 	width: 23%;
 	height: 120px;
@@ -110,12 +110,11 @@
 	word-break: break-word;
 }
 
-#allEntities li:hover, #allEntities li.active,
-#allCategories li:hover, #allCategories li.active {
+.entitiesMenu li:hover, .entitiesMenu li.active {
 	background: #a7bec4;
 }
 
-#allEntities p, #allCategories p {
+.entitiesMenu p {
 	font-size: .7em;
 	display: block;
 	vertical-align: middle;
@@ -129,7 +128,7 @@
 @media only screen
 (max-width: 568px) {
 	
-	#allEntities, #allCategories {
+	.entitiesMenu {
 		font-size: 1em;
 		padding-left: 0;
 	}
