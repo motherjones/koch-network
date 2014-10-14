@@ -36,7 +36,7 @@ var viewEntities = (function() {
         for (var i = 0; i < categories.length; i++) {
 
           var ul = $('<ul class="entitiesMenu"></ul>'),
-                div = $('<div id="' + categories[i] + '" class="sectionAnchor"><div id="' + categories[i] + 'Featured" class="featuredDetails"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p><button class="backToTop">Back to Top</button></div></div>'),
+                div = $('<div id="' + categories[i] + '" class="sectionAnchor"><div class="featuredWrapper"><div id="' + categories[i] + 'Featured" class="featuredDetails"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div><button class="backToTop">Back to Top</button></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;
