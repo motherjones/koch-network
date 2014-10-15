@@ -57,8 +57,7 @@ var viewEntities = (function() {
                              }            });
               top_ul.append($catSquare);
             });
-
-          //enable back to top button
+          
           $('.backToTop').click(function(){
             $('html, body').animate({scrollTop : 0},800);
             return false;
