@@ -140,16 +140,35 @@
 		display:none;
 	} */
 
-	#networkContainer p {
-		width: 100%;
-		line-height: 1.6em;
-	}
-		
-	.entitiesMenu {
-		font-size: 1em;
-		padding-left: 0;
+	#networkContainer {
+		width:100%;
 	}
 
+	#intro {
+		text-align: left;
+	}
+
+	#catNav li {
+		margin: 0;
+		width: 50%;
+		text-align: center;
+	}
+
+	#networkContainer p {
+		line-height: 1.6em;
+	}
+
+	.featuredWrapper {
+		width: 95%;
+	}
+
+	.entitiesMenu {
+		width: 100%;
+	}
+	
+	.entitiesMenu li {
+		width: 32%;
+	}
 }
 
 }
