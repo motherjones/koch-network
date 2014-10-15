@@ -54,7 +54,6 @@ var viewEntities = (function() {
                                $('html,body').animate({
                                  scrollTop: target.offset().top
                                }, 1000);
-                               return false;
                              }            });
               top_ul.append($catSquare);
             });
@@ -88,8 +87,8 @@ var viewEntities = (function() {
             }
           }
           
-          div.append(ul);
-          this.element.append(div);
+          div.append(div);
+          this.element.append(ul);
         }
       }
     }

@@ -1,7 +1,7 @@
 /* global container styles */
 #networkContainer {
 	font-family: 'Oswald', sans-serif;
-	width: 960px;
+	width: 100%;
 }
 /* end global container styles */
 
@@ -134,15 +134,11 @@
 /* end nav grid styles */
 
 /* mobile and device styles */
-@media only screen and (max-width: 586px) {
+@media only screen and (max-width: 768px) {
 	
 /*	span.desktopOnly {
 		display:none;
 	} */
-
-	#networkContainer {
-		width:100%;
-	}
 
 	#intro {
 		text-align: left;
