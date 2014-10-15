@@ -41,19 +41,23 @@ var viewEntities = (function() {
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;
 
-          dust.render(this.categoryTemplate, {category: categories[i]}, function(err, out) {
-            var $catSquare = $(out);
-            $catSquare.click(function() {
-              var target = $(this.hash);
-                           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                           if (target.length) {
-                             $('html,body').animate({
-                               scrollTop: target.offset().top
-                             }, 1000);
-                             return false;
-                           }            });
+          dust.render(this.categoryTemplate, {
+            catLink: categories[i].replace(/ /, ''),
+            category: categories[i]
+          }, 
+            function(err, out) {
+              var $catSquare = $(out);
+              $catSquare.click(function() {
+                var target = $(this.hash);
+                             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                             if (target.length) {
+                               $('html,body').animate({
+                                 scrollTop: target.offset().top
+                               }, 1000);
+                               return false;
+                             }            });
               top_ul.append($catSquare);
-          });
+            });
 
           //enable back to top button
           $('.backToTop').click(function(){
