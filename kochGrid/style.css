@@ -74,7 +74,7 @@
 	padding: 10px;
 }
 
-featuredDetails {
+.featuredDetails {
 	width: 100%;
 }
 
@@ -115,13 +115,12 @@ featuredDetails {
 	float: left;
 	width: 23%;
 	height: 100px;
-	background: #E4EBED;
 	margin: 2px;
 	word-break: break-word;
 }
 
 .entitiesMenu li:hover, .entitiesMenu li.active {
-	background: #a7bec4;
+	background: #cccccc;
 }
 
 .entitiesMenu p {
