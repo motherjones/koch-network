@@ -52,7 +52,13 @@ var viewEntities = (function() {
                              }, 1000);
                              return false;
                            }            });
-            top_ul.append($catSquare);
+              top_ul.append($catSquare);
+          });
+
+          //animate back to top button
+          $('.backToTop').click(function(){
+            $('html, body').animate({scrollTop : 0},800);
+            return false;
           });
            
           for (var j=0; j < this.data.length; j++) {
