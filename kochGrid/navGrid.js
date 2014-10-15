@@ -35,8 +35,8 @@ var viewEntities = (function() {
 
         for (var i = 0; i < categories.length; i++) {
 
-          var ul = $('<ul class="entitiesMenu"></ul>'),
-                div = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"><div class="featuredWrapper"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div><button class="backToTop">Back to Top</button></div>'),
+          var ul = $('<div class="mobileOnly"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div><ul class="entitiesMenu"></ul>'),
+                div = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"><div class="featuredWrapper"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1 class="desktopOnly">' + categories[i] + '</h1><pclass="desktopOnly">' + unique_categories[categories[i]] + '</p></div><button class="backToTop">Back to Top</button></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;
@@ -87,8 +87,8 @@ var viewEntities = (function() {
             }
           }
           
-          div.append(div);
-          this.element.append(ul);
+          div.prepend(ul);
+          this.element.append(div);
         }
       }
     }
