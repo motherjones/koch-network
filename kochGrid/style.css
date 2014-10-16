@@ -6,6 +6,11 @@
 	font-family: 'Oswald', sans-serif;
 	width: 100%;
 }
+
+#networkContainer .smallCap {
+	font-variant: small-caps;
+}
+
 /* end global container styles */
 
 /* start top layer styles */
@@ -84,7 +89,8 @@
 
 .entitiesMenu li {
 	float: left;
-	width: 100%;
+	width: 49%;
+	height: 55px;
 	margin: 2px;
 	word-break: break-word;
 }

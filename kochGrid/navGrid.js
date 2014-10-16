@@ -36,15 +36,16 @@ var viewEntities = (function() {
         for (var i = 0; i < categories.length; i++) {
 
           var ul = $('<ul class="entitiesMenu"></ul>'),
-                div = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"><div class="featuredWrapper"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1 class="desktopOnly">' + categories[i] + '</h1><pclass="desktopOnly">' + unique_categories[categories[i]] + '</p></div><button class="backToTop">Back to Top</button></div>'),
+                div = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"><div class="featuredWrapper"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1 class="desktopOnly">' + categories[i] + '</h1><pclass="desktopOnly">' + unique_categories[categories[i]] + '</p></div><a href="#top" class="topLink"></a></div>'),
+                backToTopButton = $('<button class="backToTop">Back to Top</button>'),
                 mobileCats = $('<div class="mobileOnly"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;
 
           dust.render(this.categoryTemplate, {
-            catLink: categories[i].replace(/ /, ''),
-            category: categories[i]
+            catLink: categories[i].replace(/ /, ''), //remove space from category names to create a href extension
+            category: categories[i] // create category names
           }, 
             function(err, out) {
               var $catSquare = $(out);
@@ -58,12 +59,13 @@ var viewEntities = (function() {
                              }            });
               top_ul.append($catSquare);
             });
-          
-          $('.backToTop').click(function(){
-            $('html, body').animate({scrollTop : 0},800);
-            return false;
-          });
-           
+
+            //backToTop scroll
+//          $('.backToTop').click(function(){
+//            $('html, body').animate({scrollTop : 0},800);
+//            return false;
+//          });
+        
           for (var j=0; j < this.data.length; j++) {
              
             if (this.data[j].category === categories[i]) {               

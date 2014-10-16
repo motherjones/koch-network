@@ -15,6 +15,7 @@
   <div id="networkContainer">
     
     <section id="intro">
+      <a name="top"></a>
       <h1>The Koch Network</h1>
       <p>Explore the vast and far-reaching influence of Charles and David Koch.</p>
       <div id="catNav"></div>
@@ -22,7 +23,7 @@
 
     <section id="categorySections"></section>
     <script>
-      var divFeaturedTemplate = '<h1>{entity}</h1><p>{blurb}</p>'; //make div with details about each entity
+      var divFeaturedTemplate = '<h1>{entity}</h1><p>{blurb}</p><p><span class="smallCap">koch-affiliated funders:</span></p><p><strong><a href="#{hrefdonor1}">{donor1}</a></strong> {amtdonor1}</p><p><strong>{donor2}</strong> {amtdonor2}</p><p><strong>{donor3}</strong> {amtdonor3}</p><p><strong>{donor4}</strong> {amtdonor4}</p>'; //make div with details about each entity
       var categoryItemTemplate = '<a href="#{catLink}"><li class="categoryItem"><img src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" /><p>{category}</p></li></a>'; //make category nav
       var listItemTemplate = '<a><li><p>{entity}</p></li></a>'; //make entity grid
       var thing = viewEntities(
