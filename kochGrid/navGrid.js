@@ -43,10 +43,10 @@ var viewEntities = (function() {
 
         for (var i = 0; i < categories.length; i++) {
 
-          var entitiesMenu = $('<ul class="entitiesMenu"></ul>'),
+          var entitiesMenu = $('<ul class="entitiesMenu desktopOnly"></ul>'),
                 sectionAnchor = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"></div>'),
-                featuredWrapper = $('<div class="featuredWrapper"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1 class="desktopOnly">' + categories[i] + '</h1><pclass="desktopOnly">' + unique_categories[categories[i]] + '</p></div>'),
-                backToTopButton = $('<a href="#top" class="topLink"><button class="backToTop">Back to Top</button></a>'),
+                featuredWrapper = $('<div class="featuredWrapper desktopOnly"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div>'),
+                backToTopButton = $('<a href="#top" class="topLink"><button class="backToTop desktopOnly">Back to Top</button></a>'),
                 mobileCats = $('<div class="mobileOnly"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
@@ -89,9 +89,9 @@ var viewEntities = (function() {
           }
           
           this.element.append(sectionAnchor);
-          sectionAnchor.prepend(entitiesMenu);
-          entitiesMenu.before(mobileCats);
-          sectionAnchor.append(featuredWrapper);
+          sectionAnchor.prepend(featuredWrapper);
+          featuredWrapper.before(mobileCats);
+          sectionAnchor.append(entitiesMenu);
           featuredWrapper.append(backToTopButton);
         }
       }
