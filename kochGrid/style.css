@@ -60,7 +60,8 @@
 	float:left;
 	margin-bottom: 15px;
 	width: 100%;
-	background: #eeeeee;
+	background: #none;
+	border: 1px solid #cccccc;
 }
 .sectionAnchor p {
 	font-family: 'Open Sans', verdana, sans-serif;
@@ -108,10 +109,10 @@
 	height: 78px;
 	margin: 2px;
 	word-break: break-word;
-	background: #cccccc;
+	background: #f6f6f6;
 }
 .entitiesMenu li:hover, .entitiesMenu li.active {
-	background: #aaaaaa;
+	background: #cccccc;
 }
 .entitiesMenu p {
 	font-size: .7em;
@@ -135,11 +136,6 @@
 	#intro {
 		text-align: left;
 	}
-	#catNav li {
-		margin: 0;
-		width: 50%;
-		text-align: center;
-	}
 	#networkContainer p {
 		line-height: 1.6em;
 	}
@@ -156,12 +152,7 @@
 }
 /* tablets */
 @media only screen and (max-width: 850px) {
-	#catNav li {
-		margin: 0;
-		width: 18%;
-		text-align: center;
-		background: none;
-	}
+
 	.entitiesMenu li {
 		width: 98%;
 		height: 58px;
