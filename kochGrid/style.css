@@ -84,8 +84,7 @@
 
 .entitiesMenu li {
 	float: left;
-	width: 23%;
-	height: 100px;
+	width: 100%;
 	margin: 2px;
 	word-break: break-word;
 }
@@ -171,10 +170,10 @@
 	}
 	
 	.entitiesMenu li {
-		width: 32%;
+		width: 48%;
+		height: 70px;
 	}
 }
 
-}
 
 
