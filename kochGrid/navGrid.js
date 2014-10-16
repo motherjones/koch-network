@@ -28,16 +28,17 @@ var viewEntities = (function() {
             unique_categories[this.data[i].category] = this.data[i].categoryblurb;
           }
         }
-        
+        //for top nav menu
         var categories = Object.keys(unique_categories);
         var top_ul = $('<ul></ul>');
         $('#catNav').append(top_ul);
 
         for (var i = 0; i < categories.length; i++) {
 
-          var ul = $('<ul class="entitiesMenu"></ul>'),
-                div = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"><div class="featuredWrapper"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1 class="desktopOnly">' + categories[i] + '</h1><pclass="desktopOnly">' + unique_categories[categories[i]] + '</p></div><a href="#top" class="topLink"></a></div>'),
-                backToTopButton = $('<button class="backToTop">Back to Top</button>'),
+          var entitiesMenu = $('<ul class="entitiesMenu"></ul>'),
+                sectionAnchor = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"></div>'),
+                featuredWrapper = $('<div class="featuredWrapper"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1 class="desktopOnly">' + categories[i] + '</h1><pclass="desktopOnly">' + unique_categories[categories[i]] + '</p></div>'),
+                backToTopButton = $('<a href="#top" class="topLink"><button class="backToTop">Back to Top</button></a>'),
                 mobileCats = $('<div class="mobileOnly"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
@@ -82,16 +83,17 @@ var viewEntities = (function() {
                       $('#' + category.replace(/ /, '') + 'Featured').html(out2);
                     });
 
-                    ul.append($square);
+                    entitiesMenu.append($square);
                   });
                 });
               })(categories[i]);
             }
           }
           
-          div.prepend(ul);
-          ul.before(mobileCats);
-          this.element.append(div);
+          sectionAnchor.prepend(entitiesMenu);
+          entitiesMenu.before(mobileCats);
+          sectionAnchor.append(featuredWrapper);
+          featuredWrapper.append(backToTopButton);
         }
       }
     }
