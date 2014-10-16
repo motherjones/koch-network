@@ -18,11 +18,11 @@
 	margin-bottom: 15px;
 }
 #catNav {
-	width:100%;
-	display: block;
-	margin: 0 auto;
+	text-align: center;
 }
 #catNav ul {
+	display:inline-block;
+	width:100%;
 	padding:0;
 	list-style: none;
 }
@@ -32,9 +32,8 @@
 #catNav li {
 	display: block;
 	float: left;
-	width: 9.9%;
+	width: 24%;
 	height: 80px;
-	background: #eeeeee;
 	margin: 0px;
 	word-break: break-word;
 }
