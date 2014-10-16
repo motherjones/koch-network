@@ -21,6 +21,14 @@ var viewEntities = (function() {
       makeHTML: function() {
 
         var unique_categories = {};
+        var scrollClick = function() {
+          var target = $(this.hash);
+                       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                       if (target.length) {
+                         $('html,body').animate({
+                           scrollTop: target.offset().top
+                         }, 1000);
+                       }            };
 
         for (var i = 0; i < this.data.length; i++) {
 
@@ -44,28 +52,18 @@ var viewEntities = (function() {
                 listTemplate = this.listTemplate,
                 detailsTemplate = this.detailsTemplate;
 
+          backToTopButton.click(scrollClick);
+
           dust.render(this.categoryTemplate, {
             catLink: categories[i].replace(/ /, ''), //remove space from category names to create a href extension
             category: categories[i] // create category names
-          }, 
+          },
+
             function(err, out) {
               var $catSquare = $(out);
-              $catSquare.click(function() {
-                var target = $(this.hash);
-                             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                             if (target.length) {
-                               $('html,body').animate({
-                                 scrollTop: target.offset().top
-                               }, 1000);
-                             }            });
+              $catSquare.click(scrollClick);
               top_ul.append($catSquare);
             });
-
-            //backToTop scroll
-//          $('.backToTop').click(function(){
-//            $('html, body').animate({scrollTop : 0},800);
-//            return false;
-//          });
         
           for (var j=0; j < this.data.length; j++) {
              
@@ -90,6 +88,7 @@ var viewEntities = (function() {
             }
           }
           
+          this.element.append(sectionAnchor);
           sectionAnchor.prepend(entitiesMenu);
           entitiesMenu.before(mobileCats);
           sectionAnchor.append(featuredWrapper);
