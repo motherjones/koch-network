@@ -4,10 +4,10 @@
 }
 #networkContainer {
 	font-family: 'Oswald', sans-serif;
-	width: 100%;
+	margin: 0 auto;
 }
 #networkContainer .smallCap {
-	font-variant: small-caps;
+
 }
 /* end global container styles */
 
@@ -15,30 +15,36 @@
 #intro {
 	width: 100%;
 	text-align: center;
-	margin-bottom: 15px;
+}
+
+#intro header p {
+	padding: 0 25em;
 }
 #catNav {
 	text-align: center;
+	margin-bottom: 5em;
 }
 #catNav ul {
 	display:inline-block;
 	width:100%;
 	padding:0;
 	list-style: none;
+	margin: 0;
 }
 #catNav a, .backToTop {
 	cursor: pointer;
 }
 #catNav li {
-	display: block;
-	float: left;
-	width: 24%;
+	display: inline-block;
+	width: 10%;
 	height: 80px;
-	margin: 0px;
+	margin: 1px;
 	word-break: break-word;
+	background: #E4EBED;
+	text-transform: capitalize;
 }
 #catNav li:hover, #catNav li.active {
-	background: #a7bec4;
+	opacity: .5;
 }
 #catNav p {
 	font-size: .7em;
@@ -60,15 +66,26 @@
 	float:left;
 	margin-bottom: 15px;
 	width: 100%;
-	background: #none;
-	border: 1px solid #cccccc;
+	padding: 2em;
+	min-height: 20em;
 }
 .sectionAnchor p {
 	font-family: 'Open Sans', verdana, sans-serif;
 	font-size:.8em;
 	line-height: 1.7em;
 }
+.sectionAnchor span {
+	text-transform: capitalize;
+	font-weight: bold;
+}
+#thinktank, #school, #studentgroup {
+	background-color: #E8E8E8;
+}
+#lobbying, #media, #culture {
+	background-color: #E4EBED;
+}
 /* end secondary layer container styles */
+
 /* start details view styles */
 .featuredWrapper {
 	float: left; 
@@ -79,18 +96,16 @@
 .featuredDetails {
 	width: 100%;
 }
+
+.featuredDetails h1 {
+	text-transform: capitalize;
+}
+
 .backToTop {
-	float:right;
-	background-color: #4C4C4A;
-	border: 4px solid #ccc;
-	color: #eee;
-	font-weight: bold;
-	letter-spacing: 1px;
-	line-height: normal;
-	text-transform: uppercase;
-	padding: 4px;
+	color: #222;
 }
 /* end details view styles */
+
 /* start nav grid styles */
 .entitiesMenu {
 	float:right;
@@ -107,7 +122,7 @@
 	float: left;
 	width: 32%;
 	height: 78px;
-	margin: 2px;
+	margin: 1px;
 	word-break: break-word;
 	background: #f6f6f6;
 }
@@ -133,14 +148,25 @@
 	.mobileOnly {
 		display: block;
 	}
-	#intro {
-		text-align: left;
+	#intro header p {
+		padding: 0 0;
 	}
-	#networkContainer p {
-		line-height: 1.6em;
-	}
+
+	#catnav li {
+		display: block;
+		width:100%;
+	}	
 	.featuredWrapper {
 		width: 95%;
+	}
+
+	.sectionAnchor {
+		position: relative;
+		float:left;
+		margin-bottom: 15px;
+		width: 80%;
+		padding: 2em;
+		min-height: 20em;
 	}
 	.entitiesMenu {
 		width: 100%;

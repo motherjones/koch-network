@@ -46,7 +46,7 @@ var viewEntities = (function() {
           var entitiesMenu = $('<ul class="entitiesMenu desktopOnly"></ul>'),
                 sectionAnchor = $('<div id="' + categories[i].replace(/ /, '') + '" class="sectionAnchor"></div>'),
                 featuredWrapper = $('<div class="featuredWrapper desktopOnly"><div id="' + categories[i].replace(/ /, '') + 'Featured" class="featuredDetails"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div>'),
-                backToTopButton = $('<a href="#top" class="topLink"><button class="backToTop desktopOnly">Back to Top</button></a>'),
+                backToTopButton = $('<a href="#top" class="topLink"><span class="backToTop desktopOnly">Back to Top</span></a>'),
                 mobileCats = $('<div class="mobileOnly"><h1>' + categories[i] + '</h1><p>' + unique_categories[categories[i]] + '</p></div>'),
                 details = this.details,
                 listTemplate = this.listTemplate,
