@@ -1,42 +1,63 @@
 <html>
 <head>
-  <title>The Koch Network</title>
-  <script src="dust-full-1.2.3.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="tabletop.js"></script>
-  <script src="navGrid.js"></script>
+    <title>The Koch Network</title>
 
-  <link href="style.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/tabletop.js"></script>
+    <script src="js/navGrid.js"></script>
+
+    <link href="style.css" rel="stylesheet" />
 
 </head>
 
 <body>
+    <div id="networkContainer">
+        <section id="intro">
+            <header>
+                <a name="top"></a>
+                <h1>The Koch Network</h1>
+                <h4>Explore the vast and far-reaching influence of Charles and David Koch.</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum orci arcu, non dapibus ligula pellentesque vel. Phasellus accumsan euismod ante, eu aliquet ante sodales ac. Vestibulum ultricies elit lectus, id tincidunt nibh facilisis vel. Byline, date</p>
+            </header>
+            <img src="bg.png" class="desktopOnly" />
+            <div id="category-nav">
+                <ul></ul>
+            </div>
+        </section>
 
-  <div id="networkContainer">
+        <section id="categories"></section>
 
-    <section id="intro">
-      <header>
-        <a name="top"></a>
-        <h1>The Koch Network</h1>
-        <h4>Explore the vast and far-reaching influence of Charles and David Koch.</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum orci arcu, non dapibus ligula pellentesque vel. Phasellus accumsan euismod ante, eu aliquet ante sodales ac. Vestibulum ultricies elit lectus, id tincidunt nibh facilisis vel. Byline, date</p>
-      </header>
-      <img src="bg.png" class="desktopOnly" />
-      <div id="catNav"></div>
-    </section>
+        <script type="text/template" id="category-nav-template">
+            <a href="#<%= categorySlug %>" class="category-link">
+                <li class="categoryItem">
+                    <img src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" />
+                    <p><%= category %></p>
+                </li>
+            </a>
+        </script>
 
-    <section id="categorySections"></section>
-    <script>
-      var divFeaturedTemplate = '<h1>{entity}</h1><p>{blurb}</p><p><span>koch-affiliated funders:</span></p><p><a href="#{hrefdonor1}">{donor1}</a> {amtdonor1}</p><p>{donor2} {amtdonor2}</p><p>{donor3} {amtdonor3}</p><p>{donor4} {amtdonor4}</p>'; //make div with details about each entity
-      var categoryItemTemplate = '<a href="#{catLink}"><li class="categoryItem"><img src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" /><p>{category}</p></li></a>'; //make category nav
-      var listItemTemplate = '<a><li><p>{entity}</p></li></a>'; //make entity grid
-      var thing = viewEntities(
-        '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE',
-        '#categorySections',
-        listItemTemplate, 
-        '#featuredDetails', 
-        divFeaturedTemplate);
-      </script>
+        <script type="text/template" id="categories-template">
+            <div id="<%= categorySlug %>" class="sectionAnchor">
+                <h2><%= category %></h2>
+
+                <ul>
+                <% _.each(entities, function(entity) { %>
+                    <li>
+                        <h3><%= entity['entity'] %></h3>
+                        <p><%= entity['blurb'] %></p>
+                        <p><span>koch-affiliated funders:</span></p>
+                        <p><a href="#<%= entity['hrefdonor1'] %>"><%= entity['donor1'] %></a></p>
+                        <p><%= entity['donor2'] %></p>
+                        <p><%= entity['donor3'] %></p>
+                        <p><%= entity['donor4'] %></p> 
+                    </li>
+                <% }); %>
+                </ul>
+
+                <a href="#top" class="topLink desktopOnly"><span class="backToTop">Back to Top</span></a>
+            </div>
+        </script>
     </div>
-  </body>
-  </html>
+</body>
+</html>

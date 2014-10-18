@@ -1,3 +1,5 @@
+
+
 /* global container styles */
 .mobileOnly {
 	display: none;
@@ -13,40 +15,35 @@
 
 /* start top layer styles */
 #intro {
-	width: 100%;
 	text-align: center;
 }
 
 #intro header p {
 	padding: 0 25em;
 }
-#catNav {
+#category-nav {
 	text-align: center;
-	margin-bottom: 5em;
 }
-#catNav ul {
+#category-nav ul {
 	display:inline-block;
-	width:100%;
 	padding:0;
 	list-style: none;
 	margin: 0;
 }
-#catNav a, .backToTop {
+#category-nav a, .backToTop {
 	cursor: pointer;
 }
-#catNav li {
+#category-nav li {
 	display: inline-block;
-	width: 10%;
-	height: 80px;
 	margin: 1px;
 	word-break: break-word;
 	background: #E4EBED;
 	text-transform: capitalize;
 }
-#catNav li:hover, #catNav li.active {
+#category-nav li:hover, #category-nav li.active {
 	opacity: .5;
 }
-#catNav p {
+#category-nav p {
 	font-size: .7em;
 	display: block;
 	vertical-align: middle;
@@ -56,18 +53,14 @@
 }
 .categoryItem img {
 	margin-top: 20px;
-	height: 20px;
+	width: 20%;
 }
 /* end top layer styles */
 
 /* start secondary layer container styles */
 .sectionAnchor {
 	position: relative;
-	float:left;
-	margin-bottom: 15px;
-	width: 100%;
-	padding: 2em;
-	min-height: 20em;
+	min-height: 30em;
 }
 .sectionAnchor p {
 	font-family: 'Open Sans', verdana, sans-serif;
@@ -88,13 +81,10 @@
 
 /* start details view styles */
 .featuredWrapper {
-	float: left; 
-	width: 48%;
 	margin-bottom: 5px;	
 	padding: 10px;
 }
 .featuredDetails {
-	width: 100%;
 }
 
 .featuredDetails h1 {
@@ -108,8 +98,6 @@
 
 /* start nav grid styles */
 .entitiesMenu {
-	float:right;
-	width: 48%;
 	margin:0;
 	padding:0;
 	list-style: none;
@@ -119,9 +107,7 @@
 	cursor: pointer;
 }
 .entitiesMenu li {
-	float: left;
-	width: 32%;
-	height: 78px;
+	display: inline-block;
 	margin: 1px;
 	word-break: break-word;
 	background: #f6f6f6;
@@ -152,39 +138,67 @@
 		padding: 0 0;
 	}
 
-	#catnav li {
+	#category-nav li {
 		display: block;
-		width:100%;
 	}	
 	.featuredWrapper {
-		width: 95%;
+		float: none;
+		padding: none;
 	}
 
 	.sectionAnchor {
 		position: relative;
 		float:left;
 		margin-bottom: 15px;
-		width: 80%;
-		padding: 2em;
-		min-height: 20em;
+		padding: 0em;
 	}
-	.entitiesMenu {
-		width: 100%;
+	.sectionAnchor p {
+		font-size: 1em;
+		line-height: normal;
+	}
+	#thinktank, #school, #studentgroup, #lobbying, #media, #culture {
+		background-color: #fff;
+	}
+	/* start nav grid styles */
+	.entitiesMenu {;
+		margin:0;
+		padding:0;
+		list-style: none;
+		display: block;
+	}
+	.entitiesMenu a {
+		cursor: pointer;
 	}
 	.entitiesMenu li {
-		width: 48%;
-		height: 70px;
+		float: none;
+		width: 100%;
+		margin: 1px;
+		word-break: break-word;
+		background: #f6f6f6;
 	}
+	.entitiesMenu li:hover, .entitiesMenu li.active {
+		background: #cccccc;
+	}
+	.entitiesMenu p {
+		font-size: normal;
+		display: block;
+		vertical-align: middle;
+		padding: 0;
+		margin: 0;
+	}
+/* end nav grid styles */	}
 }
 /* tablets */
 @media only screen and (max-width: 850px) {
 
 	.entitiesMenu li {
-		width: 98%;
-		height: 58px;
+
 	}
 }
 
 
 
 
+.test {
+	display: none;
+}
