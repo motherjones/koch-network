@@ -1,23 +1,11 @@
-#intro {
-	text-align: center;
-}
 
-#intro header p {
-	padding: 0 25em;
-}
 
-.details {
-	display: none;
-}
-
-#category-nav li {
-
-	display: inline-block;
-	width: 10%;
+#category-nav, #categories h2 {
+    text-transform: capitalize;
 }
 
 #category-nav img {
-
-
-
+    width: 2em;
+    background-repeat: 
+    <img src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" />
 }

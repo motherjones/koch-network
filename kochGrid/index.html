@@ -8,59 +8,60 @@
 </head>
 
 <body>
-    <section id="intro">
+
+    <div class="container">
         <header>
             <h1>The Koch Network</h1>
             <h4>Explore the vast and far-reaching influence of Charles and David Koch.</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum orci arcu, non dapibus ligula pellentesque vel. Phasellus accumsan euismod ante, eu aliquet ante sodales ac. Vestibulum ultricies elit lectus, id tincidunt nibh facilisis vel. Byline, date</p>
         </header>
-        <img src="bg.png" class="desktop-only" />
-        <ul id="category-nav">
+        <img src="bg.png" class="img-responsive" />
+        <ul id="category-nav" class="list-inline">
         </ul>
-    </section>
 
-    <section id="categories"></section>
+        <section id="categories" class="row"></section>
 
-    <script type="text/template" id="category-nav-template">
-        <a href="#<%= categorySlug %>" class="category-link">
+
+
+<!-- Templates -->
+        <script type="text/template" id="category-nav-template">
             <li>
-                <img src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" />
-                <p><%= category %></p>
-            </li>
-        </a>
-    </script>
+            <a href="#<%= categorySlug %>" class="category-link btn btn-default" role="button">
+            <p><%= category %></p>
+            </a>
+        </li>
+        </script>
 
-    <script type="text/template" id="entity-details-template">
-        <p><%= blurb %></p>
-        <p><span>Koch-affiliated funders:</span></p>
-        <p><a href="#<%= hrefdonor1 %>"><%= donor1 %></a></p>
-        <p><%= donor2 %></p>
-        <p><%= donor3 %></p>
-        <p><%= donor4 %></p>            
-    </script>
-
-    <script type="text/template" id="categories-template">
-        <div id="<%= categorySlug %>" class="category">
+        <script type="text/template" id="categories-template">
+            <div id="<%= categorySlug %>" class="category col-md-8">
             <h2><%= category %></h2>
             <p><%= categoryBlurb %></p>
-
-            <ul>
+            <ul class="list-unstyled">
             <% _.each(entities, function(entity) { %>
                 <li>
-                    <a href="#" class="show-details" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
-                    <div class="entity-details">
-                    </div>
+                <a href="#" class="show-details btn btn-default" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
+                <div class="entity-details">
+                </div>
                 </li>
-            <% }); %>
+                <% }); %>
             </ul>
+            <a href="#category-nav">Back to Top</a>
+            </div>
+        </script>
 
-            <a href="#category-nav" class="top-link desktop-only">Back to Top</a>
-        </div>
-    </script>
+         <script type="text/template" id="entity-details-template">
+            <p><%= blurb %></p>
+            <p><span>Koch-affiliated funders:</span></p>
+            <p><a href="#<%= hrefdonor1 %>"><%= donor1 %></a></p>
+            <p><%= donor2 %></p>
+            <p><%= donor3 %></p>
+            <p><%= donor4 %></p>            
+        </script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/underscore-min.js"></script>
-    <script src="js/tabletop.js"></script>
-    <script src="js/navGrid.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/tabletop.js"></script>
+        <script src="js/navGrid.js"></script>
+    </div>
 </body>
 </html>
