@@ -4,6 +4,17 @@
     text-transform: capitalize;
 }
 
+.entity-details {
+
+    margin-bottom: .5em;
+}
+
+.entity-details section {
+
+    margin-bottom: 1em;
+    border-bottom: 1px dotted #a6a6a6;
+}
+
 #category-nav img {
     width: 2em;
     background-repeat: 
