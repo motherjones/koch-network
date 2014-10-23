@@ -41,8 +41,7 @@ var onDataLoaded = function(data) {
         var category = categories[i];
         var rows = rowsByCategory[category];
         var categorySlug = category.replace(/ /, ''); // TKTK: should be a slug in teh spreadsheet
-
-        // var categorySlug = rows[0]['categorySlug']; PLACEHOLDER FOR WHEN WE HAVE SLUGS
+        // var categorySlug = rows[0]['categorySlug']; // PLACEHOLDER FOR WHEN WE HAVE SLUGS
 
         $categoryNav.append(categoryNavTemplate({
             'categorySlug': categorySlug,
@@ -58,7 +57,8 @@ var onDataLoaded = function(data) {
     }
 
     $('.category-link').on('click', onCategoryClick);
-    $('.show-details').on('click', onShowDetailsClick);
+    $('.show-entity').on('click', onShowEntityClick);
+    $('.donor-link').on('click', onDonorClick);
 }
 
 /*
@@ -68,6 +68,7 @@ var onCategoryClick = function(e) {
     e.preventDefault();
 
     var $target = $(this.hash);
+    console.log(this.category);
 
     $('html,body').animate({
         scrollTop: $target.offset().top
@@ -77,11 +78,10 @@ var onCategoryClick = function(e) {
 /*
  * Show entity details.
  */
-var onShowDetailsClick = function(e) {
+var onShowEntityClick = function(e) {
     e.preventDefault();
-
     var $this = $(this);
-
+    console.log(this)
     // read the index off the element
     var entityIndex = $this.data('entity-index');
 
@@ -90,12 +90,26 @@ var onShowDetailsClick = function(e) {
         return row['index'] == entityIndex;
     });
 
-    var details = entityDetailsTemplate(entity);
+    var entityDetails = entityDetailsTemplate(entity);
 
     $('.entity-details').slideUp(400)
 
-    $this.next('.entity-details').html(details).slideDown(400);
+    $this.next('.entity-details').html(entityDetails).slideDown(400);
 
+}
+
+/*
+ * Scroll to donor.
+ */
+var onDonorClick = function(e) {
+    e.preventDefault();
+
+    var $target = $(this.hash);
+    console.log(this.category);
+
+    $('html,body').animate({
+        scrollTop: $target.offset().top
+    }, 1000);
 }
 
 $(onDocumentReady);

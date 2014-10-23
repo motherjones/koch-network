@@ -28,10 +28,10 @@
 <!-- Templates -->
         <script type="text/template" id="category-nav-template">
             <li>
-            <a href="#<%= categorySlug %>" class="category-link btn btn-default" role="button">
-            <p><%= category %></p>
-            </a>
-        </li>
+                <a href="#<%= categorySlug %>" class="category-link btn btn-default" role="button">
+                <span><%= category %></span>
+                </a>
+            </li>
         </script>
 
         <script type="text/template" id="categories-template">
@@ -42,7 +42,7 @@
             <ul class="list-unstyled">
             <% _.each(entities, function(entity) { %>
                 <li>
-                <a href="#" class="show-details" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
+                <a href="#" class="show-entity" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
                 <div class="entity-details">
                 </div>
                 </li>
@@ -66,7 +66,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/underscore-min.js"></script>
         <script src="js/tabletop.js"></script>
-        <script src="js/navGrid.js"></script>
+        <script src="js/script.js"></script>
     </div>
 </body>
 </html>

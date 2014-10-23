@@ -1,18 +1,17 @@
 
-
 #category-nav, #categories h2 {
     text-transform: capitalize;
 }
 
 .entity-details {
-
-    margin-bottom: .5em;
 }
 
 .entity-details section {
-
-    margin-bottom: 1em;
-    border-bottom: 1px dotted #a6a6a6;
+	padding: .5em;
+	margin: .5em 0em .5em 1em;
+    background-color: #eee;
+    border: 1px solid #eee;
+    border-radius: 4px;
 }
 
 #category-nav img {
