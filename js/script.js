@@ -4,11 +4,13 @@ var SPREADSHEET_ID = '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE';
 // Cached jQuery selectors
 var $categories = null;
 var $categoryNav = null;
+// var $donors = null;
 
 // Compiled templates
 var categoryNavTemplate = null;
 var categoriesTemplate = null;
 var entityDetailsTemplate = null;
+var donorsTemplate = null;
 
 // State
 var spreadsheetData = null;
@@ -16,11 +18,13 @@ var spreadsheetData = null;
 var onDocumentReady = function() {
     $categories = $('#categories');
     $categoryNav = $('#category-nav');
+//  $donors = $('#donors');*/
 
     categoryNavTemplate = _.template($('#category-nav-template').html());  
     categoriesTemplate = _.template($('#categories-template').html());
     entityDetailsTemplate = _.template($('#entity-details-template').html());
-
+//  donorsTemplate = _.template($('#donors-template').html());
+    
     Tabletop.init({
         key: SPREADSHEET_ID,
         callback: onDataLoaded,
@@ -58,7 +62,7 @@ var onDataLoaded = function(data) {
 
     $('.category-link').on('click', onCategoryClick);
     $('.show-entity').on('click', onShowEntityClick);
-    $('.donor-link').on('click', onDonorClick);
+//    $('.donor-link').on('click', onDonorClick);
 }
 
 /*
@@ -96,20 +100,6 @@ var onShowEntityClick = function(e) {
 
     $this.next('.entity-details').html(entityDetails).slideDown(400);
 
-}
-
-/*
- * Scroll to donor.
- */
-var onDonorClick = function(e) {
-    e.preventDefault();
-
-    var $target = $(this.hash);
-    console.log(this.category);
-
-    $('html,body').animate({
-        scrollTop: $target.offset().top
-    }, 1000);
 }
 
 $(onDocumentReady);
