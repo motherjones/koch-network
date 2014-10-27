@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Koch Network</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <section class="row">
+        <header class="col-md-8">
+            <h1>The Koch Network</h1>
+            <h4>Explore the vast and far-reaching influence of Charles and David Koch</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum orci arcu, non dapibus ligula pellentesque vel. Phasellus accumsan euismod ante, eu aliquet ante sodales ac. Vestibulum ultricies elit lectus, id tincidunt nibh facilisis vel. <strong>Byline, date</strong></p>
+        </header>
+    </section>
+        <img src="img/bg.png" class="img-responsive" />
+        <ul id="category-nav" class="list-inline">
+        </ul>
+
+        <section id="categories" class="row"></section>
+
+
+
+<!-- Templates -->
+        <script type="text/template" id="category-nav-template">
+            <li>
+                <a href="#<%= categorySlug %>" class="category-link btn btn-default" role="button">
+                <span><%= category %></span>
+                </a>
+            </li>
+        </script>
+
+        <script type="text/template" id="categories-template">
+            <div id="<%= categorySlug %>" class="category col-md-8">
+            <h2><%= category %></h2>
+            <p><%= categoryBlurb %></p>
+            <h4>Groups and Organizations</h4>
+            <ul class="list-unstyled">
+            <% _.each(entities, function(entity) { %>
+                <li data-entity-name="<%= entity['entity'] %>"
+                <a href="#" class="show-entity" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
+                <div class="entity-details">
+                </div>
+                </li>
+                <% }); %>
+            </ul>
+            <a href="#category-nav">Back to Top</a>
+            </div>
+        </script>
+
+         <script type="text/template" id="entity-details-template">
+            <section>
+                <p><%= blurb %></p>
+                <% if (donora) { %>
+                    <a href="#" data-target-entity="<%= donora %>" class="donor-link"><%= donora %></a>
+                <% } %>
+                <% if (donorb) { %>
+                    <a href="#" data-target-entity="<%= donorb %>" class="donor-link"><%= donorb %></a>
+                <% } %>
+            </section>       
+        </script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/tabletop.js"></script>
+        <script type="text/javascript" src="http://assets.motherjones.com/interactives/plugins/pym.js/src/pym.js"></script>
+        <script src="js/script.js"></script>
+    </div>
+</body>
+</html>
