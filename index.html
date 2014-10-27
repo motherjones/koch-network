@@ -29,20 +29,20 @@
 <!-- Templates -->
         <script type="text/template" id="category-nav-template">
             <li>
-                <a href="#<%= categorySlug %>" class="category-link btn btn-default" role="button">
+                <a href="#" data-target="<%= category %>" class="category-link btn btn-default" role="button">
                 <span><%= category %></span>
                 </a>
             </li>
         </script>
 
         <script type="text/template" id="categories-template">
-            <div id="<%= categorySlug %>" class="category col-md-8">
+        <div class="category col-md-8" data-name="<%= category %>">
             <h2><%= category %></h2>
             <p><%= categoryBlurb %></p>
             <h4>Groups and Organizations</h4>
             <ul class="list-unstyled">
             <% _.each(entities, function(entity) { %>
-                <li data-entity-name="<%= entity['entity'] %>"
+                <li data-name="<%= entity['entity'] %>">
                 <a href="#" class="show-entity" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
                 <div class="entity-details">
                 </div>
@@ -57,10 +57,10 @@
             <section>
                 <p><%= blurb %></p>
                 <% if (donora) { %>
-                    <a href="#" data-target-entity="<%= donora %>" class="donor-link"><%= donora %></a>
+                    <a href="#" data-target="<%= donora %>" class="donor-link"><%= donora %></a>
                 <% } %>
                 <% if (donorb) { %>
-                    <a href="#" data-target-entity="<%= donorb %>" class="donor-link"><%= donorb %></a>
+                    <a href="#" data-target="<%= donorb %>" class="donor-link"><%= donorb %></a>
                 <% } %>
             </section>       
         </script>

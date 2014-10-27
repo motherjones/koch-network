@@ -45,49 +45,31 @@ var onDataLoaded = function(data) {
     for (var i = 0; i < categories.length; i++) {
         var category = categories[i];
         var rows = rowsByCategory[category];
-        var categorySlug = category.replace(/ /, ''); // TKTK: should be a slug in teh spreadsheet
-        // var categorySlug = rows[0]['categorySlug']; // PLACEHOLDER FOR WHEN WE HAVE SLUGS
 
         $categoryNav.append(categoryNavTemplate({
-            'categorySlug': categorySlug,
             'category': category
         }));
 
         $categories.append(categoriesTemplate({ 
             'category': category,
-            'categorySlug': categorySlug,
             'categoryBlurb': rows[0]['categoryblurb'],
             'entities': rows
         }));
     }
 
-    $('.category-link').on('click', onCategoryClick);
+    $('.category-link').on('click', onScrollTargetClick);
     $('.show-entity').on('click', onShowEntityClick);
 
     pymChild = new pym.Child();
 }
 
 /*
- * Scroll to category list.
+ * Scroll to target using data attributes.
  */
-var onCategoryClick = function(e) {
+var onScrollTargetClick = function(e) {
     e.preventDefault();
 
-    var $target = $(this.hash);
-    var offset = $target.offset().top;
-
-    pymChild.sendMessage('scroll', offset.toString())
-}
-
-/*
- * Scroll to donor entity.
- */
-var onDonorClick = function(e) {
-    e.preventDefault();
-
-    console.log($(this));
-    console.log($(this).data('target-entity'));
-    var $target = $('li[data-entity-name="' + $(this).data('target-entity') + '"]');
+    var $target = $('li[data-name="' + $(this).data('target') + '"]');
     var offset = $target.offset().top;
 
     $target.click()
@@ -101,7 +83,6 @@ var onDonorClick = function(e) {
 var onShowEntityClick = function(e) {
     e.preventDefault();
     var $this = $(this);
-    console.log(this)
     // read the index off the element
     var entityIndex = $this.data('entity-index');
 
@@ -110,13 +91,12 @@ var onShowEntityClick = function(e) {
         return row['index'] == entityIndex;
     });
 
-    console.log(entity);
     var entityDetails = entityDetailsTemplate(entity);
 
     $('.entity-details').slideUp(400)
 
     $this.next('.entity-details').html(entityDetails).slideDown(400, function(){ 
-        $('.donor-link').on('click', onDonorClick);
+        $('.donor-link').on('click', onScrollTargetClick);
         pymChild.sendHeight();
     });
 
