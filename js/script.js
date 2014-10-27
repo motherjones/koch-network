@@ -4,7 +4,6 @@ var SPREADSHEET_ID = '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE';
 // Cached jQuery selectors
 var $categories = null;
 var $categoryNav = null;
-// var $donors = null;
 
 // Compiled templates
 var categoryNavTemplate = null;
@@ -19,12 +18,10 @@ var pymChild = null;
 var onDocumentReady = function() {
     $categories = $('#categories');
     $categoryNav = $('#category-nav');
-//  $donors = $('#donors');*/
 
     categoryNavTemplate = _.template($('#category-nav-template').html());  
     categoriesTemplate = _.template($('#categories-template').html());
     entityDetailsTemplate = _.template($('#entity-details-template').html());
-//  donorsTemplate = _.template($('#donors-template').html());
     
     Tabletop.init({
         key: SPREADSHEET_ID,
@@ -69,7 +66,7 @@ var onDataLoaded = function(data) {
 var onScrollTargetClick = function(e) {
     e.preventDefault();
 
-    var $target = $('li[data-name="' + $(this).data('target') + '"]');
+    var $target = $('[data-name="' + $(this).data('target') + '"]');
     var offset = $target.offset().top;
 
     $target.click()
