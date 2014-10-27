@@ -2,8 +2,8 @@
 var SPREADSHEET_ID = '0AiK02J6OppqxdFhkVl9ONHJTZHZSVjBEamZRdzJFMkE';
 
 // Cached jQuery selectors
-var $categories = null;
 var $categoryNav = null;
+var $categories = null;
 
 // Compiled templates
 var categoryNavTemplate = null;
@@ -16,8 +16,8 @@ var spreadsheetData = null;
 var pymChild = null;
 
 var onDocumentReady = function() {
-    $categories = $('#categories');
     $categoryNav = $('#category-nav');
+    $categories = $('#categories');
 
     categoryNavTemplate = _.template($('#category-nav-template').html());  
     categoriesTemplate = _.template($('#categories-template').html());
@@ -66,6 +66,7 @@ var onDataLoaded = function(data) {
 var onScrollTargetClick = function(e) {
     e.preventDefault();
 
+    // read the target name off the element, read the target's y-coordinate
     var $target = $('[data-name="' + $(this).data('target') + '"]');
     var offset = $target.offset().top;
 
@@ -79,7 +80,9 @@ var onScrollTargetClick = function(e) {
  */
 var onShowEntityClick = function(e) {
     e.preventDefault();
+
     var $this = $(this);
+
     // read the index off the element
     var entityIndex = $this.data('entity-index');
 

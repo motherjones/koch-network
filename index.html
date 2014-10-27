@@ -10,58 +10,79 @@
 
 <body>
 
-    <div class="container">
+    <div class="container-fluid">
         <section class="row">
-        <header class="col-md-8">
-            <h1>The Koch Network</h1>
-            <h4>Explore the vast and far-reaching influence of Charles and David Koch</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum orci arcu, non dapibus ligula pellentesque vel. Phasellus accumsan euismod ante, eu aliquet ante sodales ac. Vestibulum ultricies elit lectus, id tincidunt nibh facilisis vel. <strong>Byline, date</strong></p>
-        </header>
-    </section>
+            <header class="col-md-8">
+                <h1>The Koch Network</h1>
+                <h4>Explore the vast and far-reaching influence of Charles and David Koch</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum orci arcu, non dapibus ligula pellentesque vel. Phasellus accumsan euismod ante, eu aliquet ante sodales ac. Vestibulum ultricies elit lectus, id tincidunt nibh facilisis vel. <strong>&#8212;Byline, date</strong></p>
+            </header>
+        </section>
         <img src="img/bg.png" class="img-responsive" />
-        <ul id="category-nav" class="list-inline">
-        </ul>
 
+        <!-- Category nav -->
+        <ul id="category-nav" class="list-inline"></ul>
+
+        <!-- Category list -->
         <section id="categories" class="row"></section>
 
 
 
-<!-- Templates -->
+        <!-- Category nav template -->
         <script type="text/template" id="category-nav-template">
             <li>
                 <a href="#" data-target="<%= category %>" class="category-link btn btn-default" role="button">
-                <span><%= category %></span>
+                    <span><%= category %></span>
                 </a>
             </li>
         </script>
 
+        <!-- Category list template -->
         <script type="text/template" id="categories-template">
-        <div class="category col-md-8" data-name="<%= category %>">
-            <h2><%= category %></h2>
-            <p><%= categoryBlurb %></p>
-            <h4>Groups and Organizations</h4>
-            <ul class="list-unstyled">
-            <% _.each(entities, function(entity) { %>
-                <li data-name="<%= entity['entity'] %>">
-                <a href="#" class="show-entity" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
-                <div class="entity-details">
-                </div>
-                </li>
-                <% }); %>
-            </ul>
-            <a href="#category-nav">Back to Top</a>
+            <div class="category col-md-8" data-name="<%= category %>">
+                <h2><%= category %></h2>
+                <p><%= categoryBlurb %></p>
+                <h4>Groups and Organizations</h4>
+                <ul class="list-unstyled">
+                    <% _.each(entities, function(entity) { %>
+                        <li data-name="<%= entity['entity'] %>">
+                            <a href="#" class="show-entity" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
+                            <div class="entity-details">
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+                <a href="#category-nav">Back to Top</a>
             </div>
         </script>
 
-         <script type="text/template" id="entity-details-template">
+        <!-- Entity template -->
+        <script type="text/template" id="entity-details-template">
             <section>
                 <p><%= blurb %></p>
-                <% if (donora) { %>
-                    <a href="#" data-target="<%= donora %>" class="donor-link"><%= donora %></a>
-                <% } %>
-                <% if (donorb) { %>
-                    <a href="#" data-target="<%= donorb %>" class="donor-link"><%= donorb %></a>
-                <% } %>
+                <ul class="list-unstyled">
+                    <% if (donor1) { %>
+                        <strong>Koch-Affiliated Donors:</strong>
+                        <li>
+                            <a href="#" data-target="<%= donor1 %>" class="donor-link"><%= donor1 %></a>: <%= donor1amt %>
+                        </li>
+                    <% } %>
+                    <% if (donor2) { %>
+                        <li>
+                            <a href="#" data-target="<%= donor2 %>" class="donor-link"><%= donor2 %></a>: <%= donor2amt %>
+                        </li>
+                    <% } %>
+                    <% if (donor3) { %>
+                        <li>
+                            <a href="#" data-target="<%= donor3 %>" class="donor-link"><%= donor3 %></a>: <%= donor3amt %>
+                        </li>
+                    <% } %>
+                    <% if (donor4) { %>
+                        <li>
+                            <a href="#" data-target="<%= donor4 %>" class="donor-link"><%= donor4 %></a>: <%= donor4amt %>
+                        </li>
+                    <% } %>
+                </ul>
             </section>       
         </script>
 
