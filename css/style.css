@@ -1,21 +1,19 @@
 
 #category-nav, #categories h2 {
-    text-transform: capitalize;
+text-transform: capitalize;
 }
 
-.entity-details {
+.list-inline>li {
+display: inline-block;
+padding-right: 5px;
+padding-left: 0px;
+margin-top: 5px;
 }
 
 .entity-details section {
-	padding: .5em;
-	margin: .5em 0em .5em 1em;
-    background-color: #eee;
-    border: 1px solid #eee;
-    border-radius: 4px;
-}
-
-#category-nav img {
-    width: 2em;
-    background-repeat: 
-    <img src="http://wp4270-flywheel.netdna-ssl.com/wp-content/themes/grainandmortar/images/web.png" alt="" />
+padding: .5em;
+margin: .5em 0em .5em 1em;
+background-color: #eee;
+border: 1px solid #eee;
+border-radius: 4px;
 }
