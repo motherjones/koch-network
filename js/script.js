@@ -14,6 +14,7 @@ var donorsTemplate = null;
 
 // State
 var spreadsheetData = null;
+var pymChild = null;
 
 var onDocumentReady = function() {
     $categories = $('#categories');
@@ -62,7 +63,8 @@ var onDataLoaded = function(data) {
 
     $('.category-link').on('click', onCategoryClick);
     $('.show-entity').on('click', onShowEntityClick);
-//    $('.donor-link').on('click', onDonorClick);
+
+    pymChild = new pym.Child();
 }
 
 /*
@@ -72,11 +74,25 @@ var onCategoryClick = function(e) {
     e.preventDefault();
 
     var $target = $(this.hash);
-    console.log(this.category);
+    var offset = $target.offset().top;
 
-    $('html,body').animate({
-        scrollTop: $target.offset().top
-    }, 1000);
+    pymChild.sendMessage('scroll', offset.toString())
+}
+
+/*
+ * Scroll to donor entity.
+ */
+var onDonorClick = function(e) {
+    e.preventDefault();
+
+    console.log($(this));
+    console.log($(this).data('target-entity'));
+    var $target = $('li[data-entity-name="' + $(this).data('target-entity') + '"]');
+    var offset = $target.offset().top;
+
+    $target.click()
+
+    pymChild.sendMessage('scroll', offset.toString())  
 }
 
 /*
@@ -94,11 +110,15 @@ var onShowEntityClick = function(e) {
         return row['index'] == entityIndex;
     });
 
+    console.log(entity);
     var entityDetails = entityDetailsTemplate(entity);
 
     $('.entity-details').slideUp(400)
 
-    $this.next('.entity-details').html(entityDetails).slideDown(400);
+    $this.next('.entity-details').html(entityDetails).slideDown(400, function(){ 
+        $('.donor-link').on('click', onDonorClick);
+        pymChild.sendHeight();
+    });
 
 }
 
