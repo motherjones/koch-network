@@ -9,8 +9,8 @@
 
         pymParent.onMessage('scroll', function(data) {
             var start = $('#graphic').offset().top;
-            var offset = parseFloat(data);
-
+            var offset = parseFloat(data) - 200;
+            
             $('html,body').animate({ 'scrollTop': (start + offset) }, 800);
         })
     </script>
