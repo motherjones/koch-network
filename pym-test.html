@@ -5,15 +5,14 @@
     <div id="graphic">&nbsp;</div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="http://assets.motherjones.com/interactives/plugins/pym.js/src/pym.js"></script><script>
-    
-    var pymParent = new pym.Parent('graphic', 'index.html', {});
+        var pymParent = new pym.Parent('graphic', 'index.html', {});
 
-    pymParent.onMessage('scroll', function(data) {
-        var start = $('#graphic').offset().top;
-        var offset = parseFloat(data);
+        pymParent.onMessage('scroll', function(data) {
+            var start = $('#graphic').offset().top;
+            var offset = parseFloat(data);
 
-        $('html,body').animate({ 'scrollTop': (start + offset) }, 800);
-    })
-</script>
+            $('html,body').animate({ 'scrollTop': (start + offset) }, 800);
+        })
+    </script>
 </body>
 </html>
