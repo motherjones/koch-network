@@ -1,13 +1,13 @@
 
-#category-nav, #categories h2 {
-text-transform: capitalize;
+.cluster li {
+
+	margin: 4em 0em;
+
 }
 
-.list-inline>li {
-display: inline-block;
-padding-right: 5px;
-padding-left: 0px;
-margin-top: 5px;
+
+#category-nav, #categories h2 {
+text-transform: capitalize;
 }
 
 .entity-details section {
