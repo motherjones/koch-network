@@ -53,7 +53,6 @@ var onDataLoaded = function(data) {
             'entities': rows
         }));
     }
-
     $('.category-link').on('click', onScrollTargetClick);
     $('.show-entity').on('click', onShowEntityClick);
 

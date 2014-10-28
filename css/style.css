@@ -1,11 +1,21 @@
 
+
 #category-nav, #categories h2 {
 text-transform: capitalize;
 }
 
-#category-nav li a:hover {
+#category-nav li img {
+    -webkit-transition:all .2s ease-in-out;
+    -o-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out
+}
 
+#category-nav li img:hover {
 	opacity: .3;
+}
+
+#categories li a {
+    text-decoration: none;
 }
 
 .entity-details section {

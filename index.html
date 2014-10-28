@@ -21,39 +21,38 @@
 
         <section class="row">
             <!-- Category nav -->
-            <ul id="category-nav" class="list-unstyled"></ul>
+            <ul id="category-nav" class="list-unstyled list-inline center-block"></ul>
         </section>
 
         <!-- Category list -->
         <section id="categories" class="row"></section>
 
 
-
         <!-- Category nav template -->
         <script type="text/template" id="category-nav-template">
-            <li class="col-md-4">
+            <li class="col-lg-2">
                 <a href="#" data-target="<%= category %>" class="category-link">
-                    <img src="img/<%= category %>.png"</img>
+                    <img class="img-responsive img-rounded" src="img/<%= category %>.png"</img>
                 </a>
             </li>
-        </script>
+        </script> 
 
         <!-- Category list template -->
         <script type="text/template" id="categories-template">
-            <div class="category col-md-8" data-name="<%= category %>">
+            <div class="category col-md-7" data-name="<%= category %>">
                 <h2><%= category %></h2>
                 <p><%= categoryBlurb %></p>
                 <h4>Groups and Organizations</h4>
                 <ul class="list-unstyled">
                     <% _.each(entities, function(entity) { %>
                         <li>
-                            <a href="#" class="show-entity" data-name="<%= entity['entity'] %>" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %></a>
+                            <a href="#" class="show-entity" data-name="<%= entity['entity'] %>" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %> : <span class="text-muted"><%= entity['totals'] %></span></a>
                             <div class="entity-details">
                             </div>
                         </li>
                     <% }); %>
                 </ul>
-                <a href="#category-nav">Back to Top</a>
+                <a href="#category-nav"><span class="text-muted">Back to top</span></a>
             </div>
         </script>
 
