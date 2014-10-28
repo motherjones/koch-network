@@ -32,7 +32,7 @@
         <script type="text/template" id="category-nav-template">
             <li class="col-xs-6 col-sm-3">
                 <a href="#" data-target="<%= category %>" class="category-link">
-                    <img class="img-responsive img-rounded" src="img/<%= category %>.png"</img>
+                    <img class="img-responsive" src="img/<%= category %>.jpg"</img>
                 </a>
             </li>
         </script> 
@@ -46,7 +46,9 @@
                 <ul class="list-unstyled">
                     <% _.each(entities, function(entity) { %>
                         <li>
-                            <a href="#" class="show-entity" data-name="<%= entity['entity'] %>" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %> : <span class="text-muted"><%= entity['totals'] %></span></a>
+                            <a href="#" class="show-entity" data-name="<%= entity['entity'] %>" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %><% if (entity['totals']) { %><span class="text-muted">: <%= entity['totals'] %></span>
+                                <% } %>
+                            </a>
                             <div class="entity-details">
                             </div>
                         </li>

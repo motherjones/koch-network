@@ -52,11 +52,13 @@ var onDataLoaded = function(data) {
             'categoryBlurb': rows[0]['categoryblurb'],
             'entities': rows
         }));
+
     }
     $('.category-link').on('click', onScrollTargetClick);
     $('.show-entity').on('click', onShowEntityClick);
 
     pymChild = new pym.Child();
+    setTimeout(function(){pymChild.sendHeight();}, 100);
 }
 
 /*

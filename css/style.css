@@ -14,6 +14,9 @@ text-transform: capitalize;
 	opacity: .3;
 }
 
+#category-nav li {
+padding: 1px;
+
 #categories li a {
     text-decoration: none;
 }
