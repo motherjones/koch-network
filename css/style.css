@@ -1,13 +1,11 @@
 
-.cluster li {
-
-	margin: 4em 0em;
-
-}
-
-
 #category-nav, #categories h2 {
 text-transform: capitalize;
+}
+
+#category-nav li a:hover {
+
+	opacity: .3;
 }
 
 .entity-details section {

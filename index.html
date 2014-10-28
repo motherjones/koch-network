@@ -19,10 +19,9 @@
             </header>
         </section>
 
-        <section class="row cluster">
+        <section class="row">
             <!-- Category nav -->
-            <ul id="category-nav" class="col-md-2 list-unstyled"></ul>
-            <img src="img/bg.png" class="img-responsive col-md-10" />
+            <ul id="category-nav" class="list-unstyled"></ul>
         </section>
 
         <!-- Category list -->
@@ -32,9 +31,9 @@
 
         <!-- Category nav template -->
         <script type="text/template" id="category-nav-template">
-            <li>
-                <a href="#" data-target="<%= category %>" class="category-link btn btn-primary" role="button">
-                    <span><%= category %></span>
+            <li class="col-md-4">
+                <a href="#" data-target="<%= category %>" class="category-link">
+                    <img src="img/<%= category %>.png"</img>
                 </a>
             </li>
         </script>
