@@ -60,6 +60,9 @@ var onDataLoaded = function(data) {
 
     pymChild = new pym.Child();
     setTimeout(function(){pymChild.sendHeight();}, 100);
+
+    $('#loading').hide();
+        
 }
 
 /*
@@ -76,6 +79,7 @@ var onScrollTargetClick = function(e) {
 
     pymChild.sendMessage('scroll', offset.toString()) 
     pymChild.sendHeight();
+
 }
 
 /*

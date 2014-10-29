@@ -1,17 +1,13 @@
 
-
 #category-nav, #categories h2 {
 	text-transform: capitalize;
 }
-
 #categories h2, h4, h6 {
 	font-family: 'Oswald', sans-serif;
 }
-
 #category-nav li {
 padding: 1px;
 }
-
 #category-nav li img:hover {
 	opacity: .3;
 	padding: 0px;
@@ -20,11 +16,9 @@ padding: 1px;
     -o-transition:all .2s ease-in-out;
     transition:all .2s ease-in-out;
 }
-
 #categories li a {
     text-decoration: none;
 }
-
 .entity-details section {
 padding: .5em;
 margin: .5em 0em .5em 1em;
@@ -32,3 +26,4 @@ background-color: #eee;
 border: 1px solid #eee;
 border-radius: 4px;
 }
+

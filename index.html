@@ -21,8 +21,9 @@
         <!-- Category list -->
         <section id="categories" class="row"></section>
 
-        <footer><span>Additional research by Sam Brodey and Katie Rose Quandt</span>
-
+        <div id="loading">
+            <img class="center-block" src="img/loading.gif" />
+        </div>  
 
         <!-- Category nav template -->
         <script type="text/template" id="category-nav-template">
@@ -42,7 +43,7 @@
                 <ul class="list-unstyled">
                     <% _.each(entities, function(entity) { %>
                         <li>
-                            <a href="#" class="show-entity" data-name="<%= entity['entity'] %>" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %><% if (entity['totals']) { %><span class="text-muted">: <%= entity['totals'] %></span>
+                            <a href="#" class="show-entity" data-name="<%= entity['entity'] %>" data-entity-index="<%= entity['index'] %>"><%= entity['entity'] %><% if (entity['totals']){ %><span class="text-muted">: <%= entity['totals'] %></span>
                                 <% } %>
                             </a>
                             <div class="entity-details">
