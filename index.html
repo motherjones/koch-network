@@ -39,7 +39,7 @@
             <div class="category col-md-7" data-name="<%= category %>">
                 <h2><%= category %></h2>
                 <p><%= categoryBlurb %></p>
-                <h6>Click a group to expand for more details.</h6>
+                <h4 class="text-muted">Click a group for more details.</h4>
                 <ul class="list-unstyled">
                     <% _.each(entities, function(entity) { %>
                         <li>
@@ -51,7 +51,6 @@
                         </li>
                     <% }); %>
                 </ul>
-                <a href="#" class="jump"><span>Back to top</span></a>
             </div>
         </script>
 
