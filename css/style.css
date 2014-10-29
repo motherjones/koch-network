@@ -1,21 +1,25 @@
 
 
 #category-nav, #categories h2 {
-text-transform: capitalize;
+	text-transform: capitalize;
 }
 
-#category-nav li img {
-    -webkit-transition:all .2s ease-in-out;
-    -o-transition:all .2s ease-in-out;
-    transition:all .2s ease-in-out
-}
-
-#category-nav li img:hover {
-	opacity: .3;
+#categories h2, h4, h6 {
+	font-family: 'Oswald', sans-serif;
 }
 
 #category-nav li {
 padding: 1px;
+}
+
+#category-nav li img:hover {
+	opacity: .3;
+	padding: 0px;
+	margin: 0px;
+	-webkit-transition:all .2s ease-in-out;
+    -o-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out;
+}
 
 #categories li a {
     text-decoration: none;

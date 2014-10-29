@@ -5,19 +5,13 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <section class="row">
-            <header class="col-md-8">
-                <h1>The Koch Network</h1>
-                <h4>Explore the vast and far-reaching influence of Charles and David Koch</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum orci arcu, non dapibus ligula pellentesque vel. Phasellus accumsan euismod ante, eu aliquet ante sodales ac. Vestibulum ultricies elit lectus, id tincidunt nibh facilisis vel. <strong>&#8212;Byline, date</strong></p>
-            </header>
-        </section>
+    <div class="container">
 
         <section class="row">
             <!-- Category nav -->
@@ -42,7 +36,7 @@
             <div class="category col-md-7" data-name="<%= category %>">
                 <h2><%= category %></h2>
                 <p><%= categoryBlurb %></p>
-                <h4>Groups and Organizations</h4>
+                <h6>Click a group to expand for more details.</h6>
                 <ul class="list-unstyled">
                     <% _.each(entities, function(entity) { %>
                         <li>
@@ -54,7 +48,7 @@
                         </li>
                     <% }); %>
                 </ul>
-                <a href="#category-nav"><span class="text-muted">Back to top</span></a>
+                <a href="#" class="jump"><span>Back to top</span></a>
             </div>
         </script>
 
@@ -64,24 +58,34 @@
                 <p><%= blurb %></p>
                 <ul class="list-unstyled">
                     <% if (donor1) { %>
-                        <strong>Koch-Affiliated Donors:</strong>
+                        <strong>Received money from:</strong>
                         <li>
-                            <a href="#" data-target="<%= donor1 %>" class="donor-link"><%= donor1 %></a>: <%= donor1amt %>
+                            <a href="#" data-target="<%= donor1 %>" class="donor-link"><%= donor1 %></a> <%= donor1amt %>
                         </li>
                     <% } %>
                     <% if (donor2) { %>
                         <li>
-                            <a href="#" data-target="<%= donor2 %>" class="donor-link"><%= donor2 %></a>: <%= donor2amt %>
+                            <a href="#" data-target="<%= donor2 %>" class="donor-link"><%= donor2 %></a> <%= donor2amt %>
                         </li>
                     <% } %>
                     <% if (donor3) { %>
                         <li>
-                            <a href="#" data-target="<%= donor3 %>" class="donor-link"><%= donor3 %></a>: <%= donor3amt %>
+                            <a href="#" data-target="<%= donor3 %>" class="donor-link"><%= donor3 %></a> <%= donor3amt %>
                         </li>
                     <% } %>
                     <% if (donor4) { %>
                         <li>
-                            <a href="#" data-target="<%= donor4 %>" class="donor-link"><%= donor4 %></a>: <%= donor4amt %>
+                            <a href="#" data-target="<%= donor4 %>" class="donor-link"><%= donor4 %></a> <%= donor4amt %>
+                        </li>
+                    <% } %>
+                    <% if (donor5) { %>
+                        <li>
+                            <a href="#" data-target="<%= donor5 %>" class="donor-link"><%= donor5 %></a> <%= donor5amt %>
+                        </li>
+                    <% } %>
+                    <% if (donor6) { %>
+                        <li>
+                            <a href="#" data-target="<%= donor6 %>" class="donor-link"><%= donor6 %></a> <%= donor6amt %>
                         </li>
                     <% } %>
                 </ul>

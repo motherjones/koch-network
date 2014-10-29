@@ -56,6 +56,7 @@ var onDataLoaded = function(data) {
     }
     $('.category-link').on('click', onScrollTargetClick);
     $('.show-entity').on('click', onShowEntityClick);
+    $('.jump').on('click', onBackToTopClick);
 
     pymChild = new pym.Child();
     setTimeout(function(){pymChild.sendHeight();}, 100);
@@ -73,7 +74,8 @@ var onScrollTargetClick = function(e) {
 
     $target.click()
 
-    pymChild.sendMessage('scroll', offset.toString())  
+    pymChild.sendMessage('scroll', offset.toString()) 
+    pymChild.sendHeight();
 }
 
 /*
@@ -100,7 +102,6 @@ var onShowEntityClick = function(e) {
         $('.donor-link').on('click', onScrollTargetClick);
         pymChild.sendHeight();
     });
-
 }
 
 $(onDocumentReady);
