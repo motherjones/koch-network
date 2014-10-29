@@ -56,7 +56,7 @@ var onDataLoaded = function(data) {
     }
     $('.category-link').on('click', onScrollTargetClick);
     $('.show-entity').on('click', onShowEntityClick);
-    $('.jump').on('click', onBackToTopClick);
+//    $('.jump').on('click', onBackToTopClick);
 
     pymChild = new pym.Child();
     setTimeout(function(){pymChild.sendHeight();}, 100);
@@ -103,5 +103,10 @@ var onShowEntityClick = function(e) {
         pymChild.sendHeight();
     });
 }
+
+/*var onBackToTopClick = function(e) {
+    e.preventDefault();
+    $("html, body").animate({ 'scrollTop': ($('#graphic').offset().top;) }, 1000)
+}*/
 
 $(onDocumentReady);
