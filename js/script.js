@@ -56,6 +56,7 @@ var onDataLoaded = function(data) {
     }
     $('.category-link').on('click', onScrollTargetClick);
     $('.show-entity').on('click', onShowEntityClick);
+    $('.jump').on('click', onScrollTargetClick);
 
     pymChild = new pym.Child();
     setTimeout(function(){pymChild.sendHeight();}, 100);
@@ -105,6 +106,7 @@ var onShowEntityClick = function(e) {
         $('.donor-link').on('click', onScrollTargetClick);
         pymChild.sendHeight();
     });
+
 }
 
 $(onDocumentReady);

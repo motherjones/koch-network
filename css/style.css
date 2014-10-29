@@ -1,12 +1,17 @@
 
-.container {
-	margin-top: 1em;
+
+#loading {
+	height:100%;
 }
 #category-nav, #categories h2 {
 	text-transform: capitalize;
 }
-#categories h2, h4, h6 {
+#categories h2, h4, h5, h6 {
 	font-family: 'Oswald', sans-serif;
+}
+
+#categories h6  {
+	font-weight: lighter;
 }
 #category-nav li {
 padding: 1px;
@@ -28,6 +33,10 @@ margin: .5em 0em .5em 1em;
 background-color: #eee;
 border: 1px solid #eee;
 border-radius: 4px;
+}
+
+footer {
+	margin-top: 1em;
 }
 
 
