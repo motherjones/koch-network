@@ -61,8 +61,7 @@ var onDataLoaded = function(data) {
     pymChild = new pym.Child();
     setTimeout(function(){pymChild.sendHeight();}, 100);
 
-    $('#loading').hide();
-        
+    $('#loading').hide();     
 }
 
 /*
@@ -79,7 +78,6 @@ var onScrollTargetClick = function(e) {
 
     pymChild.sendMessage('scroll', offset.toString()) 
     pymChild.sendHeight();
-
 }
 
 /*
@@ -100,13 +98,12 @@ var onShowEntityClick = function(e) {
 
     var entityDetails = entityDetailsTemplate(entity);
 
-    $('.entity-details').slideUp(400)
+    $('.entity-details').slideUp(400);
 
     $this.next('.entity-details').html(entityDetails).slideDown(400, function(){ 
         $('.donor-link').on('click', onScrollTargetClick);
         pymChild.sendHeight();
     });
-
 }
 
 $(onDocumentReady);
